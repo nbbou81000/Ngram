@@ -1,0 +1,145 @@
+name: Récolte Ngram
+
+# La récolte est un chantier fini : elle tourne toutes les nuits jusqu'à ce que
+# les deux lexiques soient complets, puis ne fait plus rien (le corpus Ngram est
+# figé en 2019, une série récoltée ne changera jamais).
+#
+# Sécurité : le travail est découpé en TRANCHES de 60 appels (~3 minutes), et
+# chaque tranche est committée et poussée dès qu'elle est finie. Un runner tué,
+# un timeout, une coupure réseau : on perd au pire la tranche en cours.
+#
+# Mesuré en conditions réelles : ~19 appels/minute, 10 mots par appel.
+# 10 tranches par langue et par nuit = 6 000 mots, soit 5 nuits pour 30 000 mots.
+
+on:
+  schedule:
+    - cron: "17 2 * * *"      # 02h17 UTC, tous les jours
+  workflow_dispatch:
+    inputs:
+      chunks:
+        description: "Tranches par langue pour ce run (60 appels chacune)"
+        default: "10"
+      calls_per_chunk:
+        description: "Appels par tranche"
+        default: "60"
+      limit:
+        description: "Taille du lexique retenu par langue"
+        default: "30000"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: recolte-ngram
+  cancel-in-progress: false
+
+jobs:
+  recolte:
+    runs-on: ubuntu-latest
+    timeout-minutes: 330
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Identité Git
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      # Les listes de fréquence ne sont téléchargées qu'une fois, au premier run,
+      # puis committées dans le dépôt. Ensuite cette étape ne fait plus rien.
+      - name: Lexiques de fréquence
+        run: |
+          set -euo pipefail
+          mkdir -p data
+          recuperer () {
+            if [ -s "data/lexicon-$1.txt" ]; then
+              echo "lexicon-$1 : déjà présent ($(wc -l < data/lexicon-$1.txt) lignes)"
+              return
+            fi
+            echo "lexicon-$1 : téléchargement"
+            curl -fsSL --retry 3 \
+              "https://raw.githubusercontent.com/hermitdave/FrequencyWords/master/content/2018/$1/$1_50k.txt" \
+              -o "data/lexicon-$1.txt"
+            echo "  $(wc -l < data/lexicon-$1.txt) lignes"
+          }
+          recuperer fr
+          recuperer en
+          git add data/lexicon-fr.txt data/lexicon-en.txt
+          if ! git diff --staged --quiet; then
+            git commit -q -m "Lexiques de fréquence (fr, en)"
+            git pull --rebase --autostash -q && git push -q
+          fi
+
+      - name: Récolte par tranches, commit après chacune
+        env:
+          CHUNKS: ${{ inputs.chunks || 10 }}
+          CALLS: ${{ inputs.calls_per_chunk || 60 }}
+          LIMIT: ${{ inputs.limit || 30000 }}
+        run: |
+          set -uo pipefail
+
+          # Pousse ce qui vient d'être récolté. Rebase d'abord : le dépôt a pu
+          # bouger entre deux tranches. Trois essais, puis on continue quand même
+          # (la tranche suivante repoussera le tout).
+          pousser () {
+            git add data/
+            if git diff --staged --quiet; then
+              echo "  (rien de neuf à committer)"
+              return 0
+            fi
+            git commit -q -m "Récolte Ngram $1 — tranche $2"
+            for essai in 1 2 3; do
+              if git pull --rebase --autostash -q && git push -q; then
+                echo "  poussé."
+                return 0
+              fi
+              echo "  push échoué (essai $essai/3), nouvelle tentative dans 10s"
+              sleep 10
+            done
+            echo "  ::warning::push impossible, la tranche suivante réessaiera"
+          }
+
+          for langue in fr en; do
+            echo "=== langue $langue ==="
+            for i in $(seq 1 "$CHUNKS"); do
+              echo "--- tranche $i/$CHUNKS ($langue) ---"
+              python scripts/harvest.py --lang "$langue" \
+                --limit "$LIMIT" --max-calls "$CALLS"
+              code=$?
+
+              # On pousse AVANT d'interpréter le code retour : même un arrêt
+              # sur échec réseau a pu récolter des mots qu'il faut sauver.
+              pousser "$langue" "$i"
+
+              case $code in
+                0) : ;;                                        # il reste du travail
+                3) echo "  $langue : lexique complet."; break ;;
+                4) echo "  $langue : Google throttle, on laisse reposer."; break ;;
+                *) echo "  ::error::code inattendu $code"; exit 1 ;;
+              esac
+            done
+          done
+
+      - name: Bilan
+        if: always()
+        run: |
+          for l in fr en; do
+            n=$(cat data/ngram-$l/part-*.jsonl 2>/dev/null | wc -l)
+            v=$(cat data/ngram-$l/part-*.jsonl 2>/dev/null | grep -c '"s": \[[0-9]' || true)
+            echo "$l : $n mots traités, $v séries non vides"
+          done
+
+      # Filet de dernier recours : si même le push a échoué, les données de ce
+      # run restent téléchargeables depuis la page du workflow pendant 7 jours.
+      - name: Sauvegarde hors dépôt
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: recolte-non-poussee
+          path: data/ngram-*/
+          retention-days: 7
+          
