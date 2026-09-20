@@ -22,14 +22,7 @@ OG = (800, 480)
 X = (1040, 780)
 MODES = ["oublie", "naissance", "resurrection", "millesime", "bilingue"]
 
-TITRES = {
-    "fr": {"oublie": "Le mot oublié", "naissance": "Le mot est né",
-           "resurrection": "La résurrection", "millesime": "Le millésime",
-           "bilingue": "Le même mot, deux langues"},
-    "en": {"oublie": "A forgotten word", "naissance": "The word appears",
-           "resurrection": "The comeback", "millesime": "Vintage year",
-           "bilingue": "One word, two languages"},
-}
+# les libellés affichés vivent dans modes.LABELS : une seule source de vérité
 
 
 def jour(date):
@@ -50,20 +43,39 @@ def charger_selection(mode, lang, sel_dir):
     return json.load(open(p, encoding="utf-8"))
 
 
-def rendre(mode, lang, date, lex, lex_autre, sel_dir, paires):
-    """Renvoie le payload complet d'un mode, ou None s'il n'y a rien à montrer."""
-    titre = TITRES[lang][mode]
+def rendre(mode, lang, date, lex, lex_autre, sel_dir, paires, lexiques=None):
+    """Renvoie le payload complet d'un mode, ou None s'il n'y a rien à montrer.
+
+    Le payload porte DEUX représentations : le SVG pré-calculé pour le plein
+    écran, et les mêmes informations en texte brut (hero, lignes) pour les
+    demi-écrans et les quadrants des mashups, qui sont trop petits pour un
+    graphe et se composent avec les briques du framework.
+    """
+    titre = modes.L(lang, mode).capitalize()
+    L = modes.L
+    hero = hero_label = None
+    lignes = []
 
     if mode == "bilingue":
         couple = choisir(paires, date)
         if not couple:
             return None
+        # le mot français se cherche TOUJOURS dans le lexique français, quelle
+        # que soit la langue d'affichage — l'inverse ne faisait correspondre que
+        # les mots identiques dans les deux langues (science, machine, radio...)
+        lfr = (lexiques or {}).get("fr") or (lex if lang == "fr" else lex_autre)
+        len_ = (lexiques or {}).get("en") or (lex_autre if lang == "fr" else lex)
         fr, en = couple["fr"], couple["en"]
-        if fr not in lex or en not in lex_autre:
+        if fr not in lfr or en not in len_:
             return None
-        svg = {k: modes.bilingue(fr, lex[fr], en, lex_autre[en], w, h)
+        svg = {k: modes.bilingue(fr, lfr[fr], en, len_[en], w, h, lang)
                for k, (w, h) in (("og", OG), ("x", X))}
         sujet = f"{fr} / {en}"
+        pf = lfr[fr].index(max(lfr[fr])) + 1800
+        pe = len_[en].index(max(len_[en])) + 1800
+        lignes = [{"label": L(lang, "francais"), "valeur": f"{L(lang,'sommet')} {pf}"},
+                  {"label": L(lang, "anglais"), "valeur": f"{L(lang,'sommet')} {pe}"}]
+        hero, hero_label = str(abs(pf - pe)), L(lang, "ecart")
 
     elif mode == "millesime":
         item = choisir(charger_selection(mode, lang, sel_dir), date)
@@ -72,9 +84,11 @@ def rendre(mode, lang, date, lex, lex_autre, sel_dir, paires):
         mots = [m for m in item["mots"] if m in lex]
         if len(mots) < 4:
             return None
-        svg = {k: modes.millesime(item["annee"], mots, lex, w, h)
+        svg = {k: modes.millesime(item["annee"], mots, lex, w, h, lang)
                for k, (w, h) in (("og", OG), ("x", X))}
         sujet = str(item["annee"])
+        lignes = [{"label": L(lang, "nes_en"), "valeur": ", ".join(mots[:4])}]
+        hero, hero_label = str(item["annee"]), L(lang, "nes_en")
 
     else:
         item = choisir(charger_selection(mode, lang, sel_dir), date)
@@ -85,9 +99,24 @@ def rendre(mode, lang, date, lex, lex_autre, sel_dir, paires):
               "resurrection": modes.resurrection}[mode]
         svg = {k: fn(mot, serie, w, h, lang) for k, (w, h) in (("og", OG), ("x", X))}
         sujet = mot
+        f = shapes.classe(serie)
+        if mode == "oublie":
+            lignes = [{"label": L(lang, "sommet"), "valeur": f"{f['pic']} · {f['max']} ppm"},
+                      {"label": L(lang, "aujourdhui"),
+                       "valeur": L(lang, "reste", pct=round(f["reste"] * 100))}]
+            hero, hero_label = str(f["pic"]), L(lang, "apogee")
+        elif mode == "naissance":
+            lignes = [{"label": L(lang, "apparition"), "valeur": L(lang, "vers", an=f["naissance"])},
+                      {"label": L(lang, "sommet"), "valeur": f"{f['pic']} · {f['max']} ppm"}]
+            hero, hero_label = str(f["naissance"]), L(lang, "entree")
+        else:
+            lignes = [{"label": L(lang, "sommet"), "valeur": str(f["pic"])},
+                      {"label": L(lang, "oubli"), "valeur": str(f["creux"])}]
+            hero, hero_label = str(f["creux"]), L(lang, "plus_bas")
 
     return {"mode": mode, "langue": lang, "titre": titre, "sujet": sujet,
-            "genere_le": date.isoformat(),
+            "hero": hero, "hero_label": hero_label, "lignes": lignes,
+            "credit": "Google Books Ngram", "genere_le": date.isoformat(),
             "og": svg["og"], "x": svg["x"]}
 
 

@@ -1,10 +1,57 @@
 #!/usr/bin/env python3
-"""Rendu éditorial des modes à un seul mot. Même châssis pour tous."""
+"""
+Rendu éditorial des modes, en français et en anglais.
+
+Tous les libellés affichés passent par LABELS : aucun texte n'est écrit en dur
+dans les fonctions de rendu. Ajouter une langue revient à ajouter une clé.
+"""
 import shapes
 
 Y0, Y1 = 1800, 2019
 N = Y1 - Y0 + 1
 SANS = "Inter,Helvetica,sans-serif"
+ANNEE_COURANTE = 2026
+
+LABELS = {
+    "fr": {
+        "oublie": "le mot oublié", "naissance": "le mot est né",
+        "resurrection": "la résurrection", "millesime": "le millésime",
+        "bilingue": "le même mot, deux langues",
+        "sommet": "sommet", "aujourdhui": "aujourd'hui", "apparition": "apparition",
+        "oubli": "oubli", "retour": "retour", "apogee": "son apogée",
+        "entree": "entré dans la langue", "plus_bas": "son plus bas",
+        "ecart": "ans d'écart entre les sommets",
+        "reste": "{pct} % du sommet", "vers": "vers {an}",
+        "creux_en": "creux en {an}", "ppm_en": "{v} ppm en {an}",
+        "nes_en": "mots nés en", "il_y_a": "il y a {n} ans",
+        "francais": "français", "anglais": "anglais",
+        "credit": "Google Books Ngram · corpus français 1800–2019",
+        "credit_bi": "Google Books Ngram · corpus français et anglais",
+        "credit_mil": "Google Books Ngram · première apparition durable dans le corpus",
+    },
+    "en": {
+        "oublie": "a forgotten word", "naissance": "the word appears",
+        "resurrection": "the comeback", "millesime": "vintage year",
+        "bilingue": "one word, two languages",
+        "sommet": "peak", "aujourdhui": "today", "apparition": "first appearance",
+        "oubli": "low point", "retour": "comeback", "apogee": "its high-water mark",
+        "entree": "entered the language", "plus_bas": "its lowest ebb",
+        "ecart": "years between the two peaks",
+        "reste": "{pct} % of its peak", "vers": "around {an}",
+        "creux_en": "bottomed out in {an}", "ppm_en": "{v} ppm in {an}",
+        "nes_en": "words born in", "il_y_a": "{n} years ago",
+        "francais": "French", "anglais": "English",
+        "credit": "Google Books Ngram · English corpus, 1800–2019",
+        "credit_bi": "Google Books Ngram · French and English corpora",
+        "credit_mil": "Google Books Ngram · first lasting appearance in the corpus",
+    },
+}
+
+
+def L(lang, cle, **kw):
+    s = LABELS[lang][cle]
+    return s.format(**kw) if kw else s
+
 
 DEFS = """<defs>
 <pattern id="tr" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
@@ -14,14 +61,16 @@ DEFS = """<defs>
 </defs>"""
 
 
-def t(x, y, s, size=14, weight="500", anchor="start", fill="#000", ls=None, style=None):
+def esc(s):
+    return (str(s).replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;"))
+
+
+def t(x, y, s, size=14, weight="500", anchor="start", fill="#000", ls=None):
     a = (f'<text x="{x:.1f}" y="{y:.1f}" font-family="{SANS}" font-size="{size}" '
          f'font-weight="{weight}" text-anchor="{anchor}" fill="{fill}"')
     if ls:
         a += f' letter-spacing="{ls}"'
-    if style:
-        a += f' font-style="{style}"'
-    return a + f'>{s}</text>'
+    return a + f'>{esc(s)}</text>'
 
 
 class Chassis:
@@ -37,13 +86,13 @@ class Chassis:
         self.x0, self.y0 = self.pad_l, self.pad_t
         self.base = self.y0 + self.h
         self.px = self.cw + 12
-        self.s = [f'<svg viewBox="0 0 {W} {H}" xmlns="http://www.w3.org/2000/svg">', DEFS,
-                  f'<rect width="{W}" height="{H}" fill="#fff"/>']
         self.ymax = 1.0
+        self.s = [f'<svg viewBox="0 0 {W} {H}" width="{W}" height="{H}" '
+                  f'xmlns="http://www.w3.org/2000/svg">', DEFS,
+                  f'<rect width="{W}" height="{H}" fill="#fff"/>']
 
-    # --- graphe ---------------------------------------------------------
-    def scale(self, series, headroom=1.12):
-        self.ymax = max(series) * headroom
+    def scale(self, valeur_max, headroom=1.12):
+        self.ymax = valeur_max * headroom
 
     def X(self, year):
         return self.x0 + self.w * (year - Y0) / (N - 1)
@@ -51,27 +100,31 @@ class Chassis:
     def Y(self, v):
         return self.base - self.h * min(v / self.ymax, 1.0)
 
-    def grille(self, unit="ppm"):
+    def grille(self):
         for f in (0.25, 0.5, 0.75, 1.0):
             y = self.base - self.h * f
             self.s.append(f'<line x1="{self.x0}" y1="{y:.1f}" x2="{self.x0+self.w}" '
                           f'y2="{y:.1f}" stroke="#000" stroke-width="1" stroke-dasharray="2 7"/>')
-            self.s.append(t(self.x0 - 9, y + 5, f"{self.ymax*f:.0f}" if self.ymax > 8
-                            else f"{self.ymax*f:.1f}", 13, "600", "end"))
-        self.s.append(t(self.x0 - 9, self.y0 - 10, unit, 11, "700", "end"))
+            v = self.ymax * f
+            self.s.append(t(self.x0 - 9, y + 5, f"{v:.0f}" if self.ymax > 8 else f"{v:.1f}",
+                            13, "600", "end"))
+        self.s.append(t(self.x0 - 9, self.y0 - 10, "ppm", 11, "700", "end"))
 
     def axe_x(self, pas=40):
         for yr in range(1800, 2020, pas):
-            self.s.append(t(self.X(yr), self.base + 25, str(yr), 14, "600", "middle"))
+            self.s.append(t(self.X(yr), self.base + 25, yr, 14, "600", "middle"))
         self.s.append(f'<line x1="{self.x0}" y1="{self.base}" x2="{self.x0+self.w}" '
                       f'y2="{self.base}" stroke="#000" stroke-width="2.5"/>')
 
-    def courbe(self, series, trame="tr", epaisseur=4.5, tirets=None):
-        pts = [(self.X(Y0 + i), self.Y(v)) for i, v in enumerate(series)]
-        d = " L ".join(f"{x:.1f},{y:.1f}" for x, y in pts)
+    def courbe(self, serie, trame="tr", epaisseur=4.5, tirets=None, pas=2):
+        idx = list(range(0, N, pas))
+        if idx[-1] != N - 1:
+            idx.append(N - 1)
+        pts = [(round(self.X(Y0 + i)), round(self.Y(serie[i]))) for i in idx]
+        d = " ".join(f"{x},{y}" for x, y in pts)
         if trame:
-            self.s.append(f'<path d="M {pts[0][0]:.1f},{self.base:.1f} L {d} '
-                          f'L {pts[-1][0]:.1f},{self.base:.1f} Z" fill="url(#{trame})"/>')
+            self.s.append(f'<path d="M {pts[0][0]},{round(self.base)} L {d} '
+                          f'L {pts[-1][0]},{round(self.base)} Z" fill="url(#{trame})"/>')
         da = f' stroke-dasharray="{tirets}"' if tirets else ""
         self.s.append(f'<path d="M {d}" fill="none" stroke="#000" '
                       f'stroke-width="{epaisseur}"{da}/>')
@@ -83,23 +136,20 @@ class Chassis:
         self.s.append(f'<circle cx="{x:.1f}" cy="{y:.1f}" r="8" fill="#fff" '
                       f'stroke="#000" stroke-width="3.5"/>')
         if etiquette:
-            bw = 8 * len(etiquette) + 20
+            bw = 8 * len(str(etiquette)) + 20
             bx = min(max(x - bw / 2, self.x0), self.x0 + self.w - bw)
             by = self.y0 - 22 if haut else self.base - 34
-            self.s.append(f'<rect x="{bx:.1f}" y="{by}" width="{bw}" height="26" '
-                          f'fill="#000"/>')
+            self.s.append(f'<rect x="{bx:.1f}" y="{by}" width="{bw}" height="26" fill="#000"/>')
             self.s.append(t(bx + bw / 2, by + 18, etiquette, 15, "700", "middle", "#fff"))
 
-    # --- panneau --------------------------------------------------------
-    def panneau(self, mode, mot, lignes, hero=None, hero_label=None):
+    def panneau(self, bandeau, sujet, lignes, hero=None, hero_label=None):
         W, H, px = self.W, self.H, self.px
         self.s.append(f'<line x1="{self.cw}" y1="16" x2="{self.cw}" y2="{H-16}" '
                       f'stroke="#000" stroke-width="2"/>')
         self.s.append(f'<rect x="{px}" y="18" width="{W-px-16}" height="24" fill="#000"/>')
-        self.s.append(t(px + 9, 36, mode.upper(), 13, "700", "start", "#fff", ls="1.8"))
-
-        taille = 34 if len(mot) <= 11 else (27 if len(mot) <= 15 else 21)
-        self.s.append(t(px, 78, mot, taille, "800"))
+        self.s.append(t(px + 9, 36, bandeau.upper(), 13, "700", "start", "#fff", ls="1.8"))
+        taille = 34 if len(sujet) <= 11 else (27 if len(sujet) <= 15 else 21)
+        self.s.append(t(px, 78, sujet, taille, "800"))
         y = 106
         for label, valeur in lignes:
             self.s.append(t(px, y, label.upper(), 11.5, "700", ls="1.2"))
@@ -113,75 +163,75 @@ class Chassis:
             self.s.append(t(px, H - 34, hero, 62, "800"))
 
     def credit(self, txt):
-        self.s.append(t(self.x0, self.H - 10, txt, 11, "500", fill="#000"))
+        self.s.append(t(self.x0, self.H - 10, txt, 11, "500"))
 
     def out(self):
         return "\n".join(self.s + ["</svg>"])
 
 
 # ---------------------------------------------------------------- modes
-def mot_oublie(mot, serie, W=800, H=480, langue="fr"):
+def mot_oublie(mot, serie, W=800, H=480, lang="fr"):
     c = shapes.classe(serie)
     ch = Chassis(W, H)
-    ch.scale(serie)
+    ch.scale(max(serie))
     ch.grille()
     ch.courbe(serie)
-    ch.repere(c["pic"], max(serie), f"sommet {c['pic']}")
+    ch.repere(c["pic"], max(serie), f"{L(lang,'sommet')} {c['pic']}")
     ch.axe_x()
-    ch.panneau("le mot oublié" if langue == "fr" else "a forgotten word", mot,
-               [("sommet", f"{c['pic']} · {c['max']} ppm"),
-                ("aujourd'hui", f"{c['reste']*100:.0f} % du sommet")],
-               hero=str(c["pic"]), hero_label="son apogée")
-    ch.credit("Google Books Ngram · corpus français 1800–2019")
+    ch.panneau(L(lang, "oublie"), mot,
+               [(L(lang, "sommet"), f"{c['pic']} · {c['max']} ppm"),
+                (L(lang, "aujourdhui"), L(lang, "reste", pct=round(c["reste"] * 100)))],
+               hero=str(c["pic"]), hero_label=L(lang, "apogee"))
+    ch.credit(L(lang, "credit"))
     return ch.out()
 
 
-def decollage(mot, serie, W=800, H=480, langue="fr"):
+def decollage(mot, serie, W=800, H=480, lang="fr"):
     c = shapes.classe(serie)
     ne = c["naissance"]
     ch = Chassis(W, H)
-    ch.scale(serie)
+    ch.scale(max(serie))
     ch.grille()
     ch.courbe(serie)
-    ch.repere(ne, serie[ne - Y0], f"{ne}")
+    ch.repere(ne, serie[ne - Y0], str(ne))
     ch.axe_x()
-    ch.panneau("le mot est né" if langue == "fr" else "the word appears", mot,
-               [("apparition", f"vers {ne}"),
-                ("sommet", f"{c['pic']} · {c['max']} ppm")],
-               hero=str(ne), hero_label="entré dans la langue")
-    ch.credit("Google Books Ngram · corpus français 1800–2019")
+    ch.panneau(L(lang, "naissance"), mot,
+               [(L(lang, "apparition"), L(lang, "vers", an=ne)),
+                (L(lang, "sommet"), f"{c['pic']} · {c['max']} ppm")],
+               hero=str(ne), hero_label=L(lang, "entree"))
+    ch.credit(L(lang, "credit"))
     return ch.out()
 
 
-def resurrection(mot, serie, W=800, H=480, langue="fr"):
+def resurrection(mot, serie, W=800, H=480, lang="fr"):
     c = shapes.classe(serie)
+    creux = c["creux"]
     ch = Chassis(W, H)
-    ch.scale(serie)
+    ch.scale(max(serie))
     ch.grille()
     ch.courbe(serie)
-    ch.repere(c["pic"], max(serie), f"sommet {c['pic']}")
-    creux = c["creux"]
-    ch.repere(creux, serie[creux - Y0], f"creux {creux}", haut=False)
+    ch.repere(c["pic"], max(serie), f"{L(lang,'sommet')} {c['pic']}")
+    ch.repere(creux, serie[creux - Y0], f"{L(lang,'oubli')} {creux}", haut=False)
     ch.axe_x()
-    ch.panneau("la résurrection", mot,
-               [("sommet", f"{c['pic']} · {c['max']} ppm"),
-                ("oubli", f"creux en {creux}"),
-                ("retour", f"{serie[-1]:.1f} ppm en 2019")],
-               hero=str(creux), hero_label="son plus bas")
-    ch.credit("Google Books Ngram · corpus français 1800–2019")
+    ch.panneau(L(lang, "resurrection"), mot,
+               [(L(lang, "sommet"), f"{c['pic']} · {c['max']} ppm"),
+                (L(lang, "oubli"), L(lang, "creux_en", an=creux)),
+                (L(lang, "retour"), L(lang, "ppm_en", v=f"{serie[-1]:.1f}", an=2019))],
+               hero=str(creux), hero_label=L(lang, "plus_bas"))
+    ch.credit(L(lang, "credit"))
     return ch.out()
 
 
-def millesime(annee, mots, lex, W=800, H=480):
-    """Plusieurs mots nés la même année : petites courbes en grille."""
-    s = [f'<svg viewBox="0 0 {W} {H}" xmlns="http://www.w3.org/2000/svg">', DEFS,
+def millesime(annee, mots, lex, W=800, H=480, lang="fr"):
+    s = [f'<svg viewBox="0 0 {W} {H}" width="{W}" height="{H}" '
+         f'xmlns="http://www.w3.org/2000/svg">', DEFS,
          f'<rect width="{W}" height="{H}" fill="#fff"/>']
-    # bandeau
     bh = int(H * 0.27)
     s.append(f'<rect x="0" y="0" width="{W}" height="{bh}" fill="#000"/>')
-    s.append(t(24, bh * 0.44, "MOTS NÉS EN", 15, "700", fill="#fff", ls="2.4"))
-    s.append(t(24, bh * 0.94, str(annee), int(bh * 0.62), "800", fill="#fff"))
-    s.append(t(W - 24, bh * 0.9, f"il y a {2026-annee} ans", 17, "600", "end", "#fff"))
+    s.append(t(24, bh * 0.44, L(lang, "nes_en").upper(), 15, "700", fill="#fff", ls="2.4"))
+    s.append(t(24, bh * 0.94, annee, int(bh * 0.62), "800", fill="#fff"))
+    s.append(t(W - 24, bh * 0.9, L(lang, "il_y_a", n=ANNEE_COURANTE - annee),
+               17, "600", "end", "#fff"))
 
     cols, rows = 3, 2
     gw = (W - 48) / cols
@@ -192,32 +242,34 @@ def millesime(annee, mots, lex, W=800, H=480):
         cy = bh + 18 + (k // cols) * gh
         cw_, chh = gw - 18, gh - 44
         mx = max(serie)
-        pts = [(cx + cw_ * i / (N - 1), cy + chh - chh * (v / mx)) for i, v in enumerate(serie)]
-        d = " L ".join(f"{x:.1f},{y:.1f}" for x, y in pts)
-        s.append(f'<path d="M {pts[0][0]:.1f},{cy+chh:.1f} L {d} '
-                 f'L {pts[-1][0]:.1f},{cy+chh:.1f} Z" fill="url(#tr)"/>')
+        # une vignette fait ~230 px de large : 220 points, c'est trois fois trop.
+        idx = list(range(0, N, 3)) + [N - 1]
+        pts = [(round(cx + cw_ * i / (N - 1)), round(cy + chh - chh * (serie[i] / mx)))
+               for i in idx]
+        d = " ".join(f"{x},{y}" for x, y in pts)
+        s.append(f'<path d="M {pts[0][0]},{round(cy+chh)} L {d} '
+                 f'L {pts[-1][0]},{round(cy+chh)} Z" fill="url(#tr)"/>')
         s.append(f'<path d="M {d}" fill="none" stroke="#000" stroke-width="3"/>')
         s.append(f'<line x1="{cx:.1f}" y1="{cy+chh:.1f}" x2="{cx+cw_:.1f}" '
                  f'y2="{cy+chh:.1f}" stroke="#000" stroke-width="2"/>')
         s.append(t(cx, cy + chh + 26, mot, 21, "800"))
         s.append(t(cx + cw_, cy + chh + 25, f"{mx:.0f} ppm", 13, "600", "end"))
-    s.append(t(24, H - 8, "Google Books Ngram · première apparition durable dans le corpus", 11, "500"))
+    s.append(t(24, H - 8, L(lang, "credit_mil"), 11, "500"))
     return "\n".join(s + ["</svg>"])
 
 
-def bilingue(mot_fr, serie_fr, mot_en, serie_en, W=800, H=480):
+def bilingue(mot_fr, serie_fr, mot_en, serie_en, W=800, H=480, lang="fr"):
     ch = Chassis(W, H)
-    ch.scale([max(max(serie_fr), max(serie_en))] )
-    ch.ymax = max(max(serie_fr), max(serie_en)) * 1.12
+    ch.scale(max(max(serie_fr), max(serie_en)))
     ch.grille()
     ch.courbe(serie_en, trame="trd", epaisseur=3, tirets="9 5")
     ch.courbe(serie_fr, trame=None, epaisseur=4.5)
     ch.axe_x()
     pf = serie_fr.index(max(serie_fr)) + Y0
     pe = serie_en.index(max(serie_en)) + Y0
-    ch.panneau("le même mot, deux langues", f"{mot_fr} / {mot_en}",
-               [("français ▬", f"sommet {pf} · {max(serie_fr):.0f} ppm"),
-                ("anglais ▭", f"sommet {pe} · {max(serie_en):.0f} ppm")],
-               hero=str(abs(pf - pe)), hero_label="ans d'écart entre les sommets")
-    ch.credit("Google Books Ngram · corpus français et anglais")
+    ch.panneau(L(lang, "bilingue"), f"{mot_fr} / {mot_en}",
+               [(L(lang, "francais") + " ▬", f"{L(lang,'sommet')} {pf} · {max(serie_fr):.0f} ppm"),
+                (L(lang, "anglais") + " ▭", f"{L(lang,'sommet')} {pe} · {max(serie_en):.0f} ppm")],
+               hero=str(abs(pf - pe)), hero_label=L(lang, "ecart"))
+    ch.credit(L(lang, "credit_bi"))
     return ch.out()
