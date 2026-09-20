@@ -1,0 +1,15 @@
+{% comment %}
+  Un quart d'écran : le mot et son année, rien d'autre.
+  Pas de barre de titre, elle mangerait la moitié de la place.
+{% endcomment %}
+{% if erreur %}
+  <div class="layout layout--col layout--center">
+    <span class="label label--small">{{ erreur }}</span>
+  </div>
+{% else %}
+  <div class="layout layout--col layout--center gap--small">
+    <span class="value value--large" data-fit-value="true">{{ sujet }}</span>
+    <span class="label label--small">{{ hero_label }}</span>
+    <span class="value value--xlarge value--tnums">{{ hero }}</span>
+  </div>
+{% endif %}

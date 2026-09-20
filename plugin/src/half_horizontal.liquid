@@ -1,0 +1,28 @@
+{% comment %}
+  Demi-écran horizontal d'un mashup : trop plat pour un graphe lisible.
+  On garde le mot, l'année héros et les deux lignes de lecture, composés
+  avec les briques du framework à partir des champs texte du payload.
+{% endcomment %}
+{% if erreur %}
+  <div class="layout layout--col layout--center">
+    <span class="label">{{ erreur }}</span>
+  </div>
+{% else %}
+  <div class="layout layout--row gap--large">
+    <div class="flex flex--col gap--small stretch-x">
+      <span class="label label--small">{{ titre }}</span>
+      <span class="value value--xlarge" data-fit-value="true">{{ sujet }}</span>
+      <span class="label label--small">{{ hero_label }}</span>
+    </div>
+    <div class="flex flex--col layout--center-y gap--small">
+      <span class="value value--xxlarge value--tnums">{{ hero }}</span>
+      {% for ligne in lignes %}
+        <span class="label label--small">{{ ligne.label }} · {{ ligne.valeur }}</span>
+      {% endfor %}
+    </div>
+  </div>
+{% endif %}
+<div class="title_bar">
+  <span class="title">{{ trmnl.plugin_settings.instance_name }}</span>
+  <span class="instance">{{ credit }}</span>
+</div>

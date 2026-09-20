@@ -1,0 +1,28 @@
+{% comment %}
+  Demi-écran vertical : colonne étroite et haute. Le mot en haut,
+  l'année héros au centre, les lignes de lecture en pied.
+{% endcomment %}
+{% if erreur %}
+  <div class="layout layout--col layout--center">
+    <span class="label">{{ erreur }}</span>
+  </div>
+{% else %}
+  <div class="layout layout--col gap--space-between">
+    <div class="flex flex--col gap--small">
+      <span class="label label--small">{{ titre }}</span>
+      <span class="value value--large" data-fit-value="true">{{ sujet }}</span>
+    </div>
+    <div class="flex flex--col gap--small">
+      <span class="label label--small">{{ hero_label }}</span>
+      <span class="value value--xxlarge value--tnums">{{ hero }}</span>
+    </div>
+    <div class="flex flex--col">
+      {% for ligne in lignes %}
+        <span class="label label--small">{{ ligne.label }} — {{ ligne.valeur }}</span>
+      {% endfor %}
+    </div>
+  </div>
+{% endif %}
+<div class="title_bar">
+  <span class="title">{{ trmnl.plugin_settings.instance_name }}</span>
+</div>

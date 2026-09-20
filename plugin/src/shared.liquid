@@ -1,0 +1,12 @@
+{% comment %}
+  Choix de la dalle, commun à toutes les vues.
+
+  L'OG mesure 800x480, le X 1040x780 : ce ne sont pas les mêmes proportions,
+  donc le SVG n'est pas agrandi, il est recomposé. Les deux versions arrivent
+  pré-calculées dans le payload, le transform ne fait que les transmettre.
+{% endcomment %}
+{% if trmnl.device.height > 600 %}
+  {% assign dalle = x %}
+{% else %}
+  {% assign dalle = og %}
+{% endif %}
