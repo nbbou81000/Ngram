@@ -1,0 +1,68 @@
+strategy: polling
+polling_verb: get
+
+# Le mode et la langue choisis par l'utilisateur sont interpolés dans l'URL :
+# chaque appareil ne télécharge que l'écran qu'il affiche (22 à 34 Ko).
+polling_url: https://nbbou81000.github.io/Ngram/api/{{ mode }}-{{ langue }}.json
+polling_body: ''
+
+# L'écran est une composition pleine page : pas de marge, pas de barre de titre.
+no_screen_padding: 'yes'
+dark_mode: 'no'
+
+custom_fields:
+  - keyname: about
+    field_type: author_bio
+    name: Le principe
+    category: Culture
+    github_url: https://github.com/nbbou81000/Ngram
+    email_address: nb.bouteiller@gmail.com
+    description: >-
+      Google a numérisé des millions de livres publiés entre 1800 et 2019, puis
+      compté chaque mot, année par année. On peut donc suivre la fréquence d'un
+      mot dans l'édition imprimée sur deux siècles : le voir apparaître,
+      culminer, décliner, parfois revenir.
+    help_text: >-
+      Ce plugin transforme cette mesure en une image par jour. Pas de
+      statistiques à déchiffrer : une courbe, un mot, une date. Les données sont
+      figées — le corpus s'arrête en 2019 — et calculées à l'avance, donc
+      l'écran ne dépend d'aucun service en ligne pour s'afficher.
+      Source : Google Books Ngram Viewer.
+
+  - keyname: langue
+    field_type: select
+    name: Langue du corpus
+    description: Le corpus interrogé, pas la langue de l'interface.
+    help_text: >-
+      Français : environ 6 millions de livres. Anglais : beaucoup plus, donc des
+      courbes plus lisses et davantage de mots disponibles.
+    options:
+      - 'Français: fr'
+      - 'English: en'
+    default: 'fr'
+
+  - keyname: mode
+    field_type: select
+    name: Ce que l'écran raconte
+    description: Un même corpus, cinq façons de le regarder.
+    help_text: >-
+      <b>Au fil des jours</b> — un mode différent chaque jour.<br>
+      <b>Le mot oublié</b> — un mot qui a culminé puis s'est effondré :
+      <i>colis</i>, sommet 1936, il en reste 18 %.<br>
+      <b>Le mot est né</b> — la date d'entrée durable d'un mot dans la langue :
+      <i>environnement</i>, vers 1963.<br>
+      <b>La résurrection</b> — tombé dans l'oubli, puis revenu :
+      <i>corruption</i>, creux en 1937. Le mode le plus rare.<br>
+      <b>Le millésime</b> — tous les mots apparus une même année :
+      1922 donne jazz, star, psychiatre, hockey.<br>
+      <b>Deux langues</b> — le même mot en français et en anglais, et l'écart
+      entre leurs deux sommets.
+    options:
+      - 'Au fil des jours: rotation'
+      - 'Le mot oublié: oublie'
+      - 'Le mot est né: naissance'
+      - 'La résurrection: resurrection'
+      - 'Le millésime: millesime'
+      - 'Deux langues: bilingue'
+    default: 'rotation'
+    
