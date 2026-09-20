@@ -34,15 +34,19 @@ def main():
     ap.add_argument("--sel-dir", default="data/selection")
     ap.add_argument("--paires", default="data/paires-bilingues.json")
     ap.add_argument("--out-dir", default="api")
+    ap.add_argument("--lang", choices=["fr", "en"], help="une seule langue")
+    ap.add_argument("--mode", help="un seul mode")
     a = ap.parse_args()
 
     lex = {l: shapes.load(l, a.data_dir) for l in ("fr", "en")}
     paires = json.load(open(a.paires, encoding="utf-8")) if os.path.exists(a.paires) else []
 
     total_fichiers = total_octets = 0
-    for lang in ("fr", "en"):
+    langues = (a.lang,) if a.lang else ("fr", "en")
+    modes_voulus = (a.mode,) if a.mode else tuple(generate.MODES)
+    for lang in langues:
         autre = lex["en" if lang == "fr" else "fr"]
-        for mode in generate.MODES:
+        for mode in modes_voulus:
             # combien d'entrées ce mode a-t-il ? on parcourt la liste entière
             if mode == "bilingue":
                 n = len(paires)
@@ -79,7 +83,9 @@ def main():
             total_octets += octets
             print(f"  {mode}-{lang:2s} : {len(slugs):4d} écrans · {octets/1e6:5.2f} Mo")
 
-    # index général : permet au transform de tirer aussi le MODE au hasard
+    # index général : permet au transform de tirer aussi le MODE au hasard.
+    # Reconstruit à chaque passage, à partir des index présents sur le disque,
+    # donc correct même quand on ne construit qu'un mode à la fois.
     for lang in ("fr", "en"):
         dispo = [m for m in generate.MODES
                  if os.path.exists(os.path.join(a.out_dir, f"index-{m}-{lang}.json"))]
