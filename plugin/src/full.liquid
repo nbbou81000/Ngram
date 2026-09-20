@@ -1,0 +1,14 @@
+{% if erreur %}
+  <div class="layout layout--col layout--center">
+    <span class="title">Ngram</span>
+    <span class="label">{{ erreur }}</span>
+  </div>
+{% elsif dalle %}
+  <div class="layout layout--col layout--center gap--none">
+    {{ dalle }}
+  </div>
+{% else %}
+  <div class="layout layout--col layout--center">
+    <span class="label">No screen available · Aucun écran disponible</span>
+  </div>
+{% endif %}
