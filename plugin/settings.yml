@@ -1,9 +1,12 @@
 strategy: polling
 polling_verb: get
 
-# Le mode et la langue choisis par l'utilisateur sont interpolés dans l'URL :
-# chaque appareil ne télécharge que l'écran qu'il affiche (22 à 34 Ko).
-polling_url: https://nbbou81000.github.io/Ngram/api/{{ mode }}-{{ langue }}.json
+# Le polling ne va chercher que l'INDEX : quelques centaines d'octets listant
+# les écrans disponibles. Le transform (serverless Python) y tire un écran au
+# sort et va le chercher. Aucun cron : le tirage a lieu à chaque
+# rafraîchissement, donc un réglage à 5 minutes donne un écran neuf toutes les
+# 5 minutes.
+polling_url: https://nbbou81000.github.io/Ngram/api/index-{{ mode }}-{{ langue }}.json
 polling_body: ''
 
 # L'écran est une composition pleine page : pas de marge, pas de barre de titre.
@@ -13,56 +16,65 @@ dark_mode: 'no'
 custom_fields:
   - keyname: about
     field_type: author_bio
-    name: Le principe
+    name: How it works — Le principe
     category: Culture
     github_url: https://github.com/nbbou81000/Ngram
     email_address: nb.bouteiller@gmail.com
     description: >-
+      Google digitised millions of books published between 1800 and 2019 and
+      counted every word, year by year. You can therefore follow a word through
+      two centuries of print: watch it appear, peak, fade, sometimes return.<br><br>
       Google a numérisé des millions de livres publiés entre 1800 et 2019, puis
-      compté chaque mot, année par année. On peut donc suivre la fréquence d'un
-      mot dans l'édition imprimée sur deux siècles : le voir apparaître,
-      culminer, décliner, parfois revenir.
+      compté chaque mot, année par année. On peut donc suivre un mot sur deux
+      siècles d'imprimé : le voir apparaître, culminer, décliner, parfois revenir.
     help_text: >-
-      Ce plugin transforme cette mesure en une image par jour. Pas de
-      statistiques à déchiffrer : une courbe, un mot, une date. Les données sont
-      figées — le corpus s'arrête en 2019 — et calculées à l'avance, donc
-      l'écran ne dépend d'aucun service en ligne pour s'afficher.
-      Source : Google Books Ngram Viewer.
+      This plugin turns that measurement into one picture a day. No statistics to
+      decode: a curve, a word, a date. The data is frozen — the corpus stops in
+      2019 — and computed in advance, so the screen depends on no live service.<br><br>
+      Ce plugin transforme cette mesure en une image par jour. Pas de statistiques
+      à déchiffrer : une courbe, un mot, une date. Les données sont figées et
+      calculées à l'avance, donc l'écran ne dépend d'aucun service en ligne.<br><br>
+      Source: Google Books Ngram Viewer.
 
   - keyname: langue
     field_type: select
-    name: Langue du corpus
-    description: Le corpus interrogé, pas la langue de l'interface.
+    name: Corpus language — Langue du corpus
+    description: >-
+      Sets both the books searched and the language of the screen.<br>
+      Détermine le corpus interrogé et la langue affichée à l'écran.
     help_text: >-
-      Français : environ 6 millions de livres. Anglais : beaucoup plus, donc des
-      courbes plus lisses et davantage de mots disponibles.
+      English draws on a far larger corpus: smoother curves and more words
+      available.<br>
+      Le corpus anglais est bien plus vaste : courbes plus lisses, plus de mots
+      disponibles.
     options:
-      - 'Français: fr'
       - 'English: en'
-    default: 'fr'
+      - 'Français: fr'
+    default: 'en'
 
   - keyname: mode
     field_type: select
-    name: Ce que l'écran raconte
-    description: Un même corpus, cinq façons de le regarder.
+    name: What the screen tells you — Ce que l'écran raconte
+    description: >-
+      One corpus, five ways of looking at it.<br>
+      Un même corpus, cinq façons de le regarder.
     help_text: >-
-      <b>Au fil des jours</b> — un mode différent chaque jour.<br>
-      <b>Le mot oublié</b> — un mot qui a culminé puis s'est effondré :
-      <i>colis</i>, sommet 1936, il en reste 18 %.<br>
-      <b>Le mot est né</b> — la date d'entrée durable d'un mot dans la langue :
-      <i>environnement</i>, vers 1963.<br>
-      <b>La résurrection</b> — tombé dans l'oubli, puis revenu :
-      <i>corruption</i>, creux en 1937. Le mode le plus rare.<br>
-      <b>Le millésime</b> — tous les mots apparus une même année :
-      1922 donne jazz, star, psychiatre, hockey.<br>
-      <b>Deux langues</b> — le même mot en français et en anglais, et l'écart
-      entre leurs deux sommets.
+      <b>Surprise me / Surprends-moi</b> — a different mode every refresh.<br>
+      <b>A forgotten word / Le mot oublié</b> — a word that peaked then collapsed:
+      <i>colis</i>, peak 1936, 18 % of it left.<br>
+      <b>The word appears / Le mot est né</b> — when a word entered the language
+      for good: <i>environnement</i>, around 1963.<br>
+      <b>The comeback / La résurrection</b> — forgotten, then revived:
+      <i>corruption</i>, bottomed out in 1937. The rarest mode.<br>
+      <b>Vintage year / Le millésime</b> — every word that appeared in one year:
+      1922 gives jazz, star, psychiatre, hockey.<br>
+      <b>Two languages / Deux langues</b> — the same word in French and English,
+      and the gap between their peaks.
     options:
-      - 'Au fil des jours: rotation'
-      - 'Le mot oublié: oublie'
-      - 'Le mot est né: naissance'
-      - 'La résurrection: resurrection'
-      - 'Le millésime: millesime'
-      - 'Deux langues: bilingue'
+      - 'Surprise me — Surprends-moi: rotation'
+      - 'A forgotten word — Le mot oublié: oublie'
+      - 'The word appears — Le mot est né: naissance'
+      - 'The comeback — La résurrection: resurrection'
+      - 'Vintage year — Le millésime: millesime'
+      - 'Two languages — Deux langues: bilingue'
     default: 'rotation'
-    
