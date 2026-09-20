@@ -1,0 +1,115 @@
+name: Construire les écrans
+
+# À lancer À LA MAIN, une fois la récolte terminée — et ensuite seulement si tu
+# élargis le lexique ou modifies le rendu. Aucun cron : le corpus Ngram est figé
+# en 2019, un écran calculé une fois ne changera plus jamais.
+#
+# Onglet Actions -> Construire les écrans -> Run workflow.
+#
+# Le travail est committé mode par mode : si le job est interrompu, tout ce qui
+# était déjà construit est conservé, et relancer reprend sans tout refaire.
+
+on:
+  workflow_dispatch:
+    inputs:
+      etape:
+        description: "Que faire"
+        type: choice
+        default: "tout"
+        options:
+          - "tout"
+          - "listes seulement"
+          - "ecrans seulement"
+      filtre_wordnet:
+        description: "Filtrer les mots par WordNet (décocher si le français est trop pauvre)"
+        type: boolean
+        default: true
+
+permissions:
+  contents: write
+
+concurrency:
+  group: construction
+  cancel-in-progress: false
+
+jobs:
+  construire:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Identité Git
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: WordNet
+        if: inputs.etape != 'ecrans seulement'
+        run: |
+          pip install --quiet nltk
+          python - <<'PY'
+          import nltk
+          for paquet in ("wordnet", "omw-1.4", "omw-2.0"):
+              nltk.download(paquet, quiet=True)
+          PY
+
+      # Les chiffres affichés ici sont à lire : ils disent combien d'écrans
+      # chaque mode pourra produire.
+      - name: Listes de candidats
+        if: inputs.etape != 'ecrans seulement'
+        env:
+          SANS_WORDNET: ${{ inputs.filtre_wordnet == false && '1' || '' }}
+        run: |
+          python scripts/prepare.py --lang fr
+          python scripts/prepare.py --lang en
+          git add data/selection/
+          git diff --staged --quiet || {
+            git commit -q -m "Listes de candidats"
+            git pull --rebase --autostash -q && git push -q
+          }
+
+      - name: Construction des écrans
+        if: inputs.etape != 'listes seulement'
+        run: |
+          set -uo pipefail
+          for langue in fr en; do
+            for mode in oublie naissance resurrection millesime bilingue; do
+              echo "--- $mode-$langue ---"
+              python scripts/build.py --lang "$langue" --mode "$mode" || {
+                echo "::warning::échec sur $mode-$langue, on continue"
+                continue
+              }
+              git add api/
+              if git diff --staged --quiet; then
+                echo "  (rien de neuf)"
+              else
+                git commit -q -m "Écrans $mode-$langue"
+                for essai in 1 2 3; do
+                  git pull --rebase --autostash -q && git push -q && break
+                  echo "  push échoué ($essai/3)"
+                  sleep 10
+                done
+              fi
+            done
+          done
+
+      - name: Bilan
+        if: always()
+        run: |
+          echo "### Écrans construits" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "| Mode | Écrans |" >> $GITHUB_STEP_SUMMARY
+          echo "|---|---|" >> $GITHUB_STEP_SUMMARY
+          for f in api/index-*.json; do
+            [ -e "$f" ] || continue
+            nom=$(basename "$f" .json | sed 's/^index-//')
+            n=$(python -c "import json,sys;d=json.load(open('$f'));print(len(d.get('ecrans',d.get('modes',[]))))")
+            echo "| $nom | $n |" >> $GITHUB_STEP_SUMMARY
+          done
+          echo "" >> $GITHUB_STEP_SUMMARY
+          du -sh api 2>/dev/null | awk '{print "Poids total : "$1}' >> $GITHUB_STEP_SUMMARY
