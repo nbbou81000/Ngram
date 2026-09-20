@@ -1,138 +1,4702 @@
 [
- {
-  "fr": "liberté",
-  "en": "liberty"
- },
- {
-  "fr": "science",
-  "en": "science"
- },
- {
-  "fr": "travail",
-  "en": "work"
- },
- {
-  "fr": "argent",
-  "en": "money"
- },
- {
-  "fr": "église",
-  "en": "church"
- },
- {
-  "fr": "machine",
-  "en": "machine"
- },
- {
-  "fr": "femme",
-  "en": "woman"
- },
- {
-  "fr": "enfant",
-  "en": "child"
- },
- {
-  "fr": "ville",
-  "en": "city"
- },
- {
-  "fr": "livre",
-  "en": "book"
- },
- {
-  "fr": "lettre",
-  "en": "letter"
- },
- {
-  "fr": "journal",
-  "en": "newspaper"
- },
- {
-  "fr": "cheval",
-  "en": "horse"
- },
- {
-  "fr": "train",
-  "en": "train"
- },
- {
-  "fr": "téléphone",
-  "en": "telephone"
- },
- {
-  "fr": "radio",
-  "en": "radio"
- },
- {
-  "fr": "cinéma",
-  "en": "cinema"
- },
- {
-  "fr": "usine",
-  "en": "factory"
- },
- {
-  "fr": "médecin",
-  "en": "doctor"
- },
- {
-  "fr": "hôpital",
-  "en": "hospital"
- },
- {
-  "fr": "école",
-  "en": "school"
- },
- {
-  "fr": "famille",
-  "en": "family"
- },
- {
-  "fr": "nation",
-  "en": "nation"
- },
- {
-  "fr": "révolution",
-  "en": "revolution"
- },
- {
-  "fr": "république",
-  "en": "republic"
- },
- {
-  "fr": "empereur",
-  "en": "emperor"
- },
- {
-  "fr": "soldat",
-  "en": "soldier"
- },
- {
-  "fr": "paix",
-  "en": "peace"
- },
- {
-  "fr": "nature",
-  "en": "nature"
- },
- {
-  "fr": "progrès",
-  "en": "progress"
- },
- {
-  "fr": "liberté",
-  "en": "freedom"
- },
- {
-  "fr": "ordinateur",
-  "en": "computer"
- },
- {
-  "fr": "avion",
-  "en": "plane"
- },
- {
-  "fr": "électricité",
-  "en": "electricity"
- }
+{
+"fr": "vide",
+"en": "empty"
+},
+{
+"fr": "personnel",
+"en": "personal"
+},
+{
+"fr": "conduire",
+"en": "steer"
+},
+{
+"fr": "vêtements",
+"en": "apparel"
+},
+{
+"fr": "bombe",
+"en": "bomb"
+},
+{
+"fr": "tante",
+"en": "aunt"
+},
+{
+"fr": "magasin",
+"en": "boutique"
+},
+{
+"fr": "souvenir",
+"en": "keepsake"
+},
+{
+"fr": "ravi",
+"en": "ninny"
+},
+{
+"fr": "terrain",
+"en": "airfield"
+},
+{
+"fr": "danser",
+"en": "dance"
+},
+{
+"fr": "machine",
+"en": "machine"
+},
+{
+"fr": "connard",
+"en": "puss"
+},
+{
+"fr": "occasion",
+"en": "juncture"
+},
+{
+"fr": "glace",
+"en": "lens"
+},
+{
+"fr": "village",
+"en": "village"
+},
+{
+"fr": "parole",
+"en": "password"
+},
+{
+"fr": "officier",
+"en": "officer"
+},
+{
+"fr": "frères",
+"en": "brethren"
+},
+{
+"fr": "bill",
+"en": "bill"
+},
+{
+"fr": "ordinateur",
+"en": "computer"
+},
+{
+"fr": "marié",
+"en": "bride"
+},
+{
+"fr": "portable",
+"en": "cellphone"
+},
+{
+"fr": "charge",
+"en": "bear"
+},
+{
+"fr": "lâche",
+"en": "coward"
+},
+{
+"fr": "mademoiselle",
+"en": "mademoiselle"
+},
+{
+"fr": "salope",
+"en": "hussy"
+},
+{
+"fr": "gosse",
+"en": "testicle"
+},
+{
+"fr": "ancien",
+"en": "dada"
+},
+{
+"fr": "restes",
+"en": "leftovers"
+},
+{
+"fr": "suspect",
+"en": "suspect"
+},
+{
+"fr": "invité",
+"en": "guest"
+},
+{
+"fr": "conversation",
+"en": "conversation"
+},
+{
+"fr": "couteau",
+"en": "knife"
+},
+{
+"fr": "couple",
+"en": "pair"
+},
+{
+"fr": "permis",
+"en": "license"
+},
+{
+"fr": "taxi",
+"en": "taxi"
+},
+{
+"fr": "restaurant",
+"en": "restaurant"
+},
+{
+"fr": "crise",
+"en": "emergency"
+},
+{
+"fr": "prince",
+"en": "prince"
+},
+{
+"fr": "alcool",
+"en": "alcohol"
+},
+{
+"fr": "étage",
+"en": "floor"
+},
+{
+"fr": "sacré",
+"en": "holy"
+},
+{
+"fr": "épouse",
+"en": "spouse"
+},
+{
+"fr": "failli",
+"en": "bankrupt"
+},
+{
+"fr": "shérif",
+"en": "sheriff"
+},
+{
+"fr": "sourire",
+"en": "smile"
+},
+{
+"fr": "signal",
+"en": "message"
+},
+{
+"fr": "destin",
+"en": "destiny"
+},
+{
+"fr": "princesse",
+"en": "princess"
+},
+{
+"fr": "costume",
+"en": "costume"
+},
+{
+"fr": "enfoiré",
+"en": "dunce"
+},
+{
+"fr": "discours",
+"en": "discourse"
+},
+{
+"fr": "robert",
+"en": "titty"
+},
+{
+"fr": "bouteille",
+"en": "bottle"
+},
+{
+"fr": "gâteau",
+"en": "cake"
+},
+{
+"fr": "appareil",
+"en": "apparatus"
+},
+{
+"fr": "privé",
+"en": "whorehouse"
+},
+{
+"fr": "adam",
+"en": "cristal"
+},
+{
+"fr": "imbécile",
+"en": "blockhead"
+},
+{
+"fr": "labo",
+"en": "laboratory"
+},
+{
+"fr": "produit",
+"en": "commodity"
+},
+{
+"fr": "pain",
+"en": "bread"
+},
+{
+"fr": "parc",
+"en": "ballpark"
+},
+{
+"fr": "toit",
+"en": "roof"
+},
+{
+"fr": "plage",
+"en": "beach"
+},
+{
+"fr": "membre",
+"en": "penis"
+},
+{
+"fr": "jardin",
+"en": "garden"
+},
+{
+"fr": "poche",
+"en": "pocket"
+},
+{
+"fr": "bobby",
+"en": "bobby"
+},
+{
+"fr": "conduit",
+"en": "duct"
+},
+{
+"fr": "fesses",
+"en": "buttocks"
+},
+{
+"fr": "étranger",
+"en": "extraterrestrial"
+},
+{
+"fr": "mens",
+"en": "monthly"
+},
+{
+"fr": "internet",
+"en": "internet"
+},
+{
+"fr": "pantalon",
+"en": "pants"
+},
+{
+"fr": "humaine",
+"en": "human"
+},
+{
+"fr": "aéroport",
+"en": "airport"
+},
+{
+"fr": "détective",
+"en": "bloodhound"
+},
+{
+"fr": "queue",
+"en": "tail"
+},
+{
+"fr": "innocent",
+"en": "innocent"
+},
+{
+"fr": "infirmière",
+"en": "nanny"
+},
+{
+"fr": "crétin",
+"en": "idiot"
+},
+{
+"fr": "propriétaire",
+"en": "landlord"
+},
+{
+"fr": "veste",
+"en": "jacket"
+},
+{
+"fr": "commun",
+"en": "roast"
+},
+{
+"fr": "souris",
+"en": "mouse"
+},
+{
+"fr": "fiston",
+"en": "laddie"
+},
+{
+"fr": "site",
+"en": "website"
+},
+{
+"fr": "jury",
+"en": "jury"
+},
+{
+"fr": "voleur",
+"en": "bandit"
+},
+{
+"fr": "accusé",
+"en": "accused"
+},
+{
+"fr": "policier",
+"en": "police"
+},
+{
+"fr": "major",
+"en": "valedictorian"
+},
+{
+"fr": "théâtre",
+"en": "theater"
+},
+{
+"fr": "rivière",
+"en": "river"
+},
+{
+"fr": "montagne",
+"en": "mound"
+},
+{
+"fr": "lunettes",
+"en": "goggles"
+},
+{
+"fr": "cabinet",
+"en": "toilet"
+},
+{
+"fr": "annonce",
+"en": "announcement"
+},
+{
+"fr": "romantique",
+"en": "romantic"
+},
+{
+"fr": "prudent",
+"en": "timid"
+},
+{
+"fr": "concert",
+"en": "concert"
+},
+{
+"fr": "dessous",
+"en": "underwear"
+},
+{
+"fr": "démon",
+"en": "demon"
+},
+{
+"fr": "usine",
+"en": "factory"
+},
+{
+"fr": "garage",
+"en": "garage"
+},
+{
+"fr": "virus",
+"en": "virus"
+},
+{
+"fr": "avancer",
+"en": "advance"
+},
+{
+"fr": "ambulance",
+"en": "ambulance"
+},
+{
+"fr": "puce",
+"en": "flea"
+},
+{
+"fr": "park",
+"en": "commons"
+},
+{
+"fr": "agence",
+"en": "dresser"
+},
+{
+"fr": "artiste",
+"en": "artist"
+},
+{
+"fr": "résoudre",
+"en": "resolution"
+},
+{
+"fr": "fromage",
+"en": "cheese"
+},
+{
+"fr": "essence",
+"en": "gasoline"
+},
+{
+"fr": "champagne",
+"en": "champagne"
+},
+{
+"fr": "gardien",
+"en": "defender"
+},
+{
+"fr": "déranger",
+"en": "bother"
+},
+{
+"fr": "menteur",
+"en": "liar"
+},
+{
+"fr": "inviter",
+"en": "invite"
+},
+{
+"fr": "chair",
+"en": "flesh"
+},
+{
+"fr": "crâne",
+"en": "skull"
+},
+{
+"fr": "scientifique",
+"en": "scientist"
+},
+{
+"fr": "sénateur",
+"en": "senator"
+},
+{
+"fr": "cloche",
+"en": "bell"
+},
+{
+"fr": "étudier",
+"en": "sketch"
+},
+{
+"fr": "demi",
+"en": "runt"
+},
+{
+"fr": "département",
+"en": "department"
+},
+{
+"fr": "pizza",
+"en": "pizza"
+},
+{
+"fr": "foyer",
+"en": "dormitory"
+},
+{
+"fr": "uniforme",
+"en": "uniform"
+},
+{
+"fr": "soupe",
+"en": "soup"
+},
+{
+"fr": "prêtre",
+"en": "clergyman"
+},
+{
+"fr": "corde",
+"en": "cord"
+},
+{
+"fr": "champion",
+"en": "paladin"
+},
+{
+"fr": "commissaire",
+"en": "commissioner"
+},
+{
+"fr": "joueur",
+"en": "actor"
+},
+{
+"fr": "conseiller",
+"en": "adviser"
+},
+{
+"fr": "humanité",
+"en": "humankind"
+},
+{
+"fr": "lapin",
+"en": "rabbit"
+},
+{
+"fr": "désert",
+"en": "barren"
+},
+{
+"fr": "discussion",
+"en": "discussion"
+},
+{
+"fr": "répéter",
+"en": "repeat"
+},
+{
+"fr": "cadavre",
+"en": "carcass"
+},
+{
+"fr": "front",
+"en": "eyebrow"
+},
+{
+"fr": "océan",
+"en": "ocean"
+},
+{
+"fr": "vélo",
+"en": "bicycle"
+},
+{
+"fr": "poupée",
+"en": "doll"
+},
+{
+"fr": "ménage",
+"en": "family"
+},
+{
+"fr": "bouton",
+"en": "button"
+},
+{
+"fr": "juré",
+"en": "juror"
+},
+{
+"fr": "tapis",
+"en": "carpet"
+},
+{
+"fr": "whisky",
+"en": "whiskey"
+},
+{
+"fr": "loup",
+"en": "wolf"
+},
+{
+"fr": "nourrir",
+"en": "feed"
+},
+{
+"fr": "professionnel",
+"en": "working"
+},
+{
+"fr": "sandwich",
+"en": "sandwich"
+},
+{
+"fr": "nana",
+"en": "chick"
+},
+{
+"fr": "incident",
+"en": "incident"
+},
+{
+"fr": "célibataire",
+"en": "bachelor"
+},
+{
+"fr": "abruti",
+"en": "imbecile"
+},
+{
+"fr": "extraordinaire",
+"en": "special"
+},
+{
+"fr": "porc",
+"en": "swine"
+},
+{
+"fr": "bloc",
+"en": "block"
+},
+{
+"fr": "business",
+"en": "clientele"
+},
+{
+"fr": "assistant",
+"en": "assistant"
+},
+{
+"fr": "central",
+"en": "central"
+},
+{
+"fr": "placard",
+"en": "cupboard"
+},
+{
+"fr": "miel",
+"en": "honey"
+},
+{
+"fr": "classique",
+"en": "classic"
+},
+{
+"fr": "temple",
+"en": "synagogue"
+},
+{
+"fr": "piano",
+"en": "piano"
+},
+{
+"fr": "bibliothèque",
+"en": "bookcase"
+},
+{
+"fr": "hall",
+"en": "foyer"
+},
+{
+"fr": "miroir",
+"en": "mirror"
+},
+{
+"fr": "section",
+"en": "segment"
+},
+{
+"fr": "briser",
+"en": "severance"
+},
+{
+"fr": "sauce",
+"en": "godsend"
+},
+{
+"fr": "séance",
+"en": "session"
+},
+{
+"fr": "égal",
+"en": "peer"
+},
+{
+"fr": "moto",
+"en": "motorbike"
+},
+{
+"fr": "audience",
+"en": "consultation"
+},
+{
+"fr": "info",
+"en": "information"
+},
+{
+"fr": "possibilité",
+"en": "telescope"
+},
+{
+"fr": "poussière",
+"en": "dust"
+},
+{
+"fr": "valise",
+"en": "suitcase"
+},
+{
+"fr": "molly",
+"en": "mollie"
+},
+{
+"fr": "musée",
+"en": "museum"
+},
+{
+"fr": "refuser",
+"en": "garbage"
+},
+{
+"fr": "magazine",
+"en": "clip"
+},
+{
+"fr": "étudiant",
+"en": "graduate"
+},
+{
+"fr": "blonde",
+"en": "blond"
+},
+{
+"fr": "voyant",
+"en": "seer"
+},
+{
+"fr": "large",
+"en": "broad"
+},
+{
+"fr": "troupes",
+"en": "troops"
+},
+{
+"fr": "géant",
+"en": "giant"
+},
+{
+"fr": "portefeuille",
+"en": "briefcase"
+},
+{
+"fr": "alibi",
+"en": "alibi"
+},
+{
+"fr": "cave",
+"en": "basement"
+},
+{
+"fr": "enculé",
+"en": "anus"
+},
+{
+"fr": "cabine",
+"en": "kiosk"
+},
+{
+"fr": "électrique",
+"en": "electric"
+},
+{
+"fr": "traître",
+"en": "deserter"
+},
+{
+"fr": "cassette",
+"en": "cassette"
+},
+{
+"fr": "original",
+"en": "original"
+},
+{
+"fr": "employé",
+"en": "employee"
+},
+{
+"fr": "neveu",
+"en": "nephew"
+},
+{
+"fr": "pouls",
+"en": "heartbeat"
+},
+{
+"fr": "échelle",
+"en": "ladder"
+},
+{
+"fr": "tribu",
+"en": "kindred"
+},
+{
+"fr": "taule",
+"en": "jail"
+},
+{
+"fr": "tunnel",
+"en": "tunnel"
+},
+{
+"fr": "poudre",
+"en": "down"
+},
+{
+"fr": "témoignage",
+"en": "certificate"
+},
+{
+"fr": "actrice",
+"en": "actress"
+},
+{
+"fr": "oxygène",
+"en": "oxygen"
+},
+{
+"fr": "frigo",
+"en": "fridge"
+},
+{
+"fr": "christ",
+"en": "messiah"
+},
+{
+"fr": "noble",
+"en": "aristocrat"
+},
+{
+"fr": "auteur",
+"en": "copyright"
+},
+{
+"fr": "foie",
+"en": "liver"
+},
+{
+"fr": "robot",
+"en": "robot"
+},
+{
+"fr": "adjoint",
+"en": "helper"
+},
+{
+"fr": "terroriste",
+"en": "terrorist"
+},
+{
+"fr": "clan",
+"en": "clan"
+},
+{
+"fr": "gratuit",
+"en": "free"
+},
+{
+"fr": "total",
+"en": "total"
+},
+{
+"fr": "micro",
+"en": "microphone"
+},
+{
+"fr": "plastique",
+"en": "plastic"
+},
+{
+"fr": "cimetière",
+"en": "cemetery"
+},
+{
+"fr": "guitare",
+"en": "guitar"
+},
+{
+"fr": "amant",
+"en": "lover"
+},
+{
+"fr": "chirurgien",
+"en": "surgeon"
+},
+{
+"fr": "lampe",
+"en": "lamp"
+},
+{
+"fr": "métal",
+"en": "alloy"
+},
+{
+"fr": "masse",
+"en": "sledgehammer"
+},
+{
+"fr": "noix",
+"en": "walnut"
+},
+{
+"fr": "lion",
+"en": "lion"
+},
+{
+"fr": "malédiction",
+"en": "curse"
+},
+{
+"fr": "rumeur",
+"en": "rumor"
+},
+{
+"fr": "toast",
+"en": "toast"
+},
+{
+"fr": "otage",
+"en": "hostage"
+},
+{
+"fr": "héroïne",
+"en": "heroin"
+},
+{
+"fr": "écrivain",
+"en": "writer"
+},
+{
+"fr": "cousine",
+"en": "cousin"
+},
+{
+"fr": "bâtard",
+"en": "mutt"
+},
+{
+"fr": "brigade",
+"en": "brigade"
+},
+{
+"fr": "leader",
+"en": "leader"
+},
+{
+"fr": "timide",
+"en": "cautious"
+},
+{
+"fr": "funérailles",
+"en": "funeral"
+},
+{
+"fr": "dessert",
+"en": "dessert"
+},
+{
+"fr": "veuve",
+"en": "widow"
+},
+{
+"fr": "impact",
+"en": "impact"
+},
+{
+"fr": "maintenir",
+"en": "conserve"
+},
+{
+"fr": "panneau",
+"en": "billboard"
+},
+{
+"fr": "ambassadeur",
+"en": "ambassador"
+},
+{
+"fr": "poing",
+"en": "fist"
+},
+{
+"fr": "chapitre",
+"en": "title"
+},
+{
+"fr": "four",
+"en": "furnace"
+},
+{
+"fr": "alpha",
+"en": "basics"
+},
+{
+"fr": "satellite",
+"en": "satellite"
+},
+{
+"fr": "vallée",
+"en": "valley"
+},
+{
+"fr": "franc",
+"en": "weenie"
+},
+{
+"fr": "revolver",
+"en": "revolver"
+},
+{
+"fr": "rate",
+"en": "spleen"
+},
+{
+"fr": "avocate",
+"en": "lawyer"
+},
+{
+"fr": "statue",
+"en": "statue"
+},
+{
+"fr": "aile",
+"en": "wing"
+},
+{
+"fr": "vodka",
+"en": "vodka"
+},
+{
+"fr": "serveuse",
+"en": "waitress"
+},
+{
+"fr": "relève",
+"en": "conversion"
+},
+{
+"fr": "candidat",
+"en": "applicant"
+},
+{
+"fr": "planque",
+"en": "hideout"
+},
+{
+"fr": "asile",
+"en": "haven"
+},
+{
+"fr": "fabrique",
+"en": "mill"
+},
+{
+"fr": "puits",
+"en": "chamber"
+},
+{
+"fr": "république",
+"en": "republic"
+},
+{
+"fr": "facture",
+"en": "invoice"
+},
+{
+"fr": "domicile",
+"en": "dwelling"
+},
+{
+"fr": "médaille",
+"en": "medal"
+},
+{
+"fr": "texte",
+"en": "text"
+},
+{
+"fr": "guerrier",
+"en": "warrior"
+},
+{
+"fr": "manche",
+"en": "handle"
+},
+{
+"fr": "batman",
+"en": "batman"
+},
+{
+"fr": "maquillage",
+"en": "makeup"
+},
+{
+"fr": "magicien",
+"en": "magician"
+},
+{
+"fr": "canard",
+"en": "duck"
+},
+{
+"fr": "téléphoner",
+"en": "earpiece"
+},
+{
+"fr": "dinde",
+"en": "turkey"
+},
+{
+"fr": "tube",
+"en": "tube"
+},
+{
+"fr": "ingénieur",
+"en": "engineer"
+},
+{
+"fr": "pape",
+"en": "pope"
+},
+{
+"fr": "morgue",
+"en": "morgue"
+},
+{
+"fr": "silencieux",
+"en": "muffler"
+},
+{
+"fr": "requin",
+"en": "shark"
+},
+{
+"fr": "harper",
+"en": "harper"
+},
+{
+"fr": "avaler",
+"en": "swallow"
+},
+{
+"fr": "nièce",
+"en": "niece"
+},
+{
+"fr": "trouble",
+"en": "hassle"
+},
+{
+"fr": "sourd",
+"en": "deaf"
+},
+{
+"fr": "destinée",
+"en": "fate"
+},
+{
+"fr": "linge",
+"en": "fabric"
+},
+{
+"fr": "archives",
+"en": "archive"
+},
+{
+"fr": "tissu",
+"en": "cloth"
+},
+{
+"fr": "prostituée",
+"en": "prostitute"
+},
+{
+"fr": "cervelle",
+"en": "brain"
+},
+{
+"fr": "baron",
+"en": "magnate"
+},
+{
+"fr": "genou",
+"en": "stifle"
+},
+{
+"fr": "campus",
+"en": "campus"
+},
+{
+"fr": "vilain",
+"en": "villain"
+},
+{
+"fr": "grossesse",
+"en": "miscarriage"
+},
+{
+"fr": "daisy",
+"en": "daisy"
+},
+{
+"fr": "ranch",
+"en": "ranch"
+},
+{
+"fr": "murphy",
+"en": "potato"
+},
+{
+"fr": "chaussure",
+"en": "boot"
+},
+{
+"fr": "tiroir",
+"en": "drawer"
+},
+{
+"fr": "dale",
+"en": "dale"
+},
+{
+"fr": "spécialiste",
+"en": "expert"
+},
+{
+"fr": "suisse",
+"en": "chipmunk"
+},
+{
+"fr": "sperme",
+"en": "semen"
+},
+{
+"fr": "plafond",
+"en": "ceiling"
+},
+{
+"fr": "poème",
+"en": "poem"
+},
+{
+"fr": "pendu",
+"en": "hangman"
+},
+{
+"fr": "ambassade",
+"en": "embassy"
+},
+{
+"fr": "adversaire",
+"en": "adversary"
+},
+{
+"fr": "soupir",
+"en": "sigh"
+},
+{
+"fr": "accro",
+"en": "addict"
+},
+{
+"fr": "horloge",
+"en": "clock"
+},
+{
+"fr": "vomi",
+"en": "vomit"
+},
+{
+"fr": "frites",
+"en": "fries"
+},
+{
+"fr": "peindre",
+"en": "rouge"
+},
+{
+"fr": "kirk",
+"en": "kirk"
+},
+{
+"fr": "vedette",
+"en": "speedboat"
+},
+{
+"fr": "serre",
+"en": "talon"
+},
+{
+"fr": "dentiste",
+"en": "dentist"
+},
+{
+"fr": "machin",
+"en": "appliance"
+},
+{
+"fr": "civil",
+"en": "civilian"
+},
+{
+"fr": "désespéré",
+"en": "desperate"
+},
+{
+"fr": "coke",
+"en": "cocaine"
+},
+{
+"fr": "satan",
+"en": "dickens"
+},
+{
+"fr": "recette",
+"en": "recipe"
+},
+{
+"fr": "intime",
+"en": "intimate"
+},
+{
+"fr": "cuire",
+"en": "cook"
+},
+{
+"fr": "saloperie",
+"en": "asshole"
+},
+{
+"fr": "drogué",
+"en": "junkie"
+},
+{
+"fr": "merveille",
+"en": "marvel"
+},
+{
+"fr": "lave",
+"en": "lava"
+},
+{
+"fr": "surnom",
+"en": "nickname"
+},
+{
+"fr": "photographe",
+"en": "photographer"
+},
+{
+"fr": "steak",
+"en": "steak"
+},
+{
+"fr": "cachette",
+"en": "hideaway"
+},
+{
+"fr": "moustache",
+"en": "beard"
+},
+{
+"fr": "poésie",
+"en": "poetry"
+},
+{
+"fr": "garantie",
+"en": "guarantee"
+},
+{
+"fr": "représentant",
+"en": "broker"
+},
+{
+"fr": "compliment",
+"en": "compliment"
+},
+{
+"fr": "grotte",
+"en": "cave"
+},
+{
+"fr": "orchestre",
+"en": "orchestra"
+},
+{
+"fr": "portail",
+"en": "portal"
+},
+{
+"fr": "louche",
+"en": "ladle"
+},
+{
+"fr": "archer",
+"en": "archer"
+},
+{
+"fr": "reporter",
+"en": "reporter"
+},
+{
+"fr": "infirmerie",
+"en": "hospital"
+},
+{
+"fr": "savon",
+"en": "soap"
+},
+{
+"fr": "piper",
+"en": "piper"
+},
+{
+"fr": "galerie",
+"en": "corridor"
+},
+{
+"fr": "décharge",
+"en": "discharge"
+},
+{
+"fr": "bétail",
+"en": "livestock"
+},
+{
+"fr": "coco",
+"en": "coconut"
+},
+{
+"fr": "syndicat",
+"en": "union"
+},
+{
+"fr": "tournoi",
+"en": "tournament"
+},
+{
+"fr": "déesse",
+"en": "goddess"
+},
+{
+"fr": "social",
+"en": "sociable"
+},
+{
+"fr": "galaxie",
+"en": "galaxy"
+},
+{
+"fr": "quai",
+"en": "pier"
+},
+{
+"fr": "oreiller",
+"en": "pillow"
+},
+{
+"fr": "erica",
+"en": "erica"
+},
+{
+"fr": "vitre",
+"en": "pane"
+},
+{
+"fr": "grange",
+"en": "barn"
+},
+{
+"fr": "laser",
+"en": "laser"
+},
+{
+"fr": "amateur",
+"en": "amateur"
+},
+{
+"fr": "psychopathe",
+"en": "sociopath"
+},
+{
+"fr": "banc",
+"en": "bench"
+},
+{
+"fr": "engin",
+"en": "setup"
+},
+{
+"fr": "maillot",
+"en": "shirt"
+},
+{
+"fr": "barman",
+"en": "bartender"
+},
+{
+"fr": "veronica",
+"en": "veronica"
+},
+{
+"fr": "gene",
+"en": "gene"
+},
+{
+"fr": "psychiatre",
+"en": "psychiatrist"
+},
+{
+"fr": "concierge",
+"en": "caretaker"
+},
+{
+"fr": "étrangère",
+"en": "foreigner"
+},
+{
+"fr": "poussée",
+"en": "thrust"
+},
+{
+"fr": "fardeau",
+"en": "load"
+},
+{
+"fr": "alcoolique",
+"en": "alcoholic"
+},
+{
+"fr": "rayons",
+"en": "spoke"
+},
+{
+"fr": "souper",
+"en": "supper"
+},
+{
+"fr": "institut",
+"en": "institute"
+},
+{
+"fr": "chips",
+"en": "crisp"
+},
+{
+"fr": "voyou",
+"en": "bully"
+},
+{
+"fr": "coiffure",
+"en": "hairdo"
+},
+{
+"fr": "député",
+"en": "congressman"
+},
+{
+"fr": "barrière",
+"en": "barrier"
+},
+{
+"fr": "district",
+"en": "precinct"
+},
+{
+"fr": "radar",
+"en": "radar"
+},
+{
+"fr": "grille",
+"en": "bars"
+},
+{
+"fr": "mâle",
+"en": "male"
+},
+{
+"fr": "ciao",
+"en": "aloha"
+},
+{
+"fr": "poète",
+"en": "poet"
+},
+{
+"fr": "passerelle",
+"en": "bridge"
+},
+{
+"fr": "poignet",
+"en": "wrist"
+},
+{
+"fr": "directrice",
+"en": "coach"
+},
+{
+"fr": "pharmacie",
+"en": "dispensary"
+},
+{
+"fr": "gant",
+"en": "glove"
+},
+{
+"fr": "héritier",
+"en": "heir"
+},
+{
+"fr": "sénat",
+"en": "senate"
+},
+{
+"fr": "conne",
+"en": "tosser"
+},
+{
+"fr": "comtesse",
+"en": "countess"
+},
+{
+"fr": "défaite",
+"en": "defeat"
+},
+{
+"fr": "décédé",
+"en": "deceased"
+},
+{
+"fr": "brute",
+"en": "brute"
+},
+{
+"fr": "trottoir",
+"en": "pavement"
+},
+{
+"fr": "marchand",
+"en": "merchandise"
+},
+{
+"fr": "sueur",
+"en": "sweat"
+},
+{
+"fr": "vagin",
+"en": "vagina"
+},
+{
+"fr": "faille",
+"en": "loophole"
+},
+{
+"fr": "raciste",
+"en": "racist"
+},
+{
+"fr": "patrie",
+"en": "fatherland"
+},
+{
+"fr": "certificat",
+"en": "credentials"
+},
+{
+"fr": "auberge",
+"en": "guesthouse"
+},
+{
+"fr": "soie",
+"en": "silk"
+},
+{
+"fr": "chèvre",
+"en": "goat"
+},
+{
+"fr": "carburant",
+"en": "fuel"
+},
+{
+"fr": "cortex",
+"en": "cortex"
+},
+{
+"fr": "danseuse",
+"en": "dancer"
+},
+{
+"fr": "supermarché",
+"en": "supermarket"
+},
+{
+"fr": "rideau",
+"en": "curtain"
+},
+{
+"fr": "agneau",
+"en": "lamb"
+},
+{
+"fr": "cheminée",
+"en": "chimney"
+},
+{
+"fr": "môme",
+"en": "child"
+},
+{
+"fr": "papy",
+"en": "grandfather"
+},
+{
+"fr": "aîné",
+"en": "elder"
+},
+{
+"fr": "char",
+"en": "chariot"
+},
+{
+"fr": "aigle",
+"en": "eagle"
+},
+{
+"fr": "matelas",
+"en": "mattress"
+},
+{
+"fr": "vainqueur",
+"en": "winner"
+},
+{
+"fr": "araignée",
+"en": "spider"
+},
+{
+"fr": "pognon",
+"en": "dough"
+},
+{
+"fr": "colis",
+"en": "baggage"
+},
+{
+"fr": "purée",
+"en": "puree"
+},
+{
+"fr": "missile",
+"en": "missile"
+},
+{
+"fr": "thérapeute",
+"en": "therapist"
+},
+{
+"fr": "rein",
+"en": "kidney"
+},
+{
+"fr": "religieux",
+"en": "monk"
+},
+{
+"fr": "balai",
+"en": "broom"
+},
+{
+"fr": "environs",
+"en": "vicinity"
+},
+{
+"fr": "détecteur",
+"en": "detector"
+},
+{
+"fr": "béton",
+"en": "concrete"
+},
+{
+"fr": "fumier",
+"en": "droppings"
+},
+{
+"fr": "lessive",
+"en": "laundry"
+},
+{
+"fr": "rasoir",
+"en": "razor"
+},
+{
+"fr": "mineur",
+"en": "miner"
+},
+{
+"fr": "dispositif",
+"en": "device"
+},
+{
+"fr": "marina",
+"en": "marina"
+},
+{
+"fr": "intrus",
+"en": "intruder"
+},
+{
+"fr": "télégramme",
+"en": "telegram"
+},
+{
+"fr": "manoir",
+"en": "manor"
+},
+{
+"fr": "papi",
+"en": "gramps"
+},
+{
+"fr": "cigare",
+"en": "cigar"
+},
+{
+"fr": "chimique",
+"en": "chemical"
+},
+{
+"fr": "trajectoire",
+"en": "trajectory"
+},
+{
+"fr": "cargaison",
+"en": "cargo"
+},
+{
+"fr": "peintre",
+"en": "cougar"
+},
+{
+"fr": "morphine",
+"en": "morphine"
+},
+{
+"fr": "grenouille",
+"en": "frog"
+},
+{
+"fr": "violon",
+"en": "violin"
+},
+{
+"fr": "karma",
+"en": "karma"
+},
+{
+"fr": "delta",
+"en": "delta"
+},
+{
+"fr": "célébrité",
+"en": "celebrity"
+},
+{
+"fr": "réclame",
+"en": "advertisement"
+},
+{
+"fr": "ring",
+"en": "bypass"
+},
+{
+"fr": "pneu",
+"en": "tire"
+},
+{
+"fr": "limousine",
+"en": "limousine"
+},
+{
+"fr": "fermier",
+"en": "farmer"
+},
+{
+"fr": "communiste",
+"en": "commie"
+},
+{
+"fr": "cycle",
+"en": "round"
+},
+{
+"fr": "mousse",
+"en": "foam"
+},
+{
+"fr": "remords",
+"en": "reproach"
+},
+{
+"fr": "hart",
+"en": "stag"
+},
+{
+"fr": "tonton",
+"en": "uncle"
+},
+{
+"fr": "atout",
+"en": "trump"
+},
+{
+"fr": "permanence",
+"en": "panel"
+},
+{
+"fr": "comique",
+"en": "comedian"
+},
+{
+"fr": "chili",
+"en": "chilli"
+},
+{
+"fr": "logiciel",
+"en": "software"
+},
+{
+"fr": "féminin",
+"en": "feminine"
+},
+{
+"fr": "ivrogne",
+"en": "drunkard"
+},
+{
+"fr": "insulter",
+"en": "insult"
+},
+{
+"fr": "réserves",
+"en": "militia"
+},
+{
+"fr": "torse",
+"en": "shard"
+},
+{
+"fr": "cartel",
+"en": "cartel"
+},
+{
+"fr": "chanteuse",
+"en": "singer"
+},
+{
+"fr": "acheteur",
+"en": "buyer"
+},
+{
+"fr": "express",
+"en": "express"
+},
+{
+"fr": "seau",
+"en": "bucket"
+},
+{
+"fr": "étiquette",
+"en": "etiquette"
+},
+{
+"fr": "crayon",
+"en": "pencil"
+},
+{
+"fr": "clôture",
+"en": "fence"
+},
+{
+"fr": "épidémie",
+"en": "outbreak"
+},
+{
+"fr": "grenade",
+"en": "grenade"
+},
+{
+"fr": "menton",
+"en": "chin"
+},
+{
+"fr": "hangar",
+"en": "hangar"
+},
+{
+"fr": "régiment",
+"en": "regiment"
+},
+{
+"fr": "convention",
+"en": "agreement"
+},
+{
+"fr": "vase",
+"en": "vase"
+},
+{
+"fr": "torche",
+"en": "blowtorch"
+},
+{
+"fr": "accouchement",
+"en": "labor"
+},
+{
+"fr": "hourra",
+"en": "hurrah"
+},
+{
+"fr": "ouragan",
+"en": "hurricane"
+},
+{
+"fr": "buffet",
+"en": "closet"
+},
+{
+"fr": "bougie",
+"en": "candle"
+},
+{
+"fr": "vaccin",
+"en": "vaccine"
+},
+{
+"fr": "sherlock",
+"en": "sherlock"
+},
+{
+"fr": "dynamite",
+"en": "dynamite"
+},
+{
+"fr": "reprocher",
+"en": "reprimand"
+},
+{
+"fr": "aspirine",
+"en": "aspirin"
+},
+{
+"fr": "chargement",
+"en": "freight"
+},
+{
+"fr": "architecte",
+"en": "architect"
+},
+{
+"fr": "femelle",
+"en": "female"
+},
+{
+"fr": "fouet",
+"en": "whip"
+},
+{
+"fr": "exemplaire",
+"en": "copy"
+},
+{
+"fr": "maternelle",
+"en": "kindergarten"
+},
+{
+"fr": "antidote",
+"en": "antidote"
+},
+{
+"fr": "mouchoir",
+"en": "handkerchief"
+},
+{
+"fr": "data",
+"en": "data"
+},
+{
+"fr": "falaise",
+"en": "cliff"
+},
+{
+"fr": "violeur",
+"en": "rapist"
+},
+{
+"fr": "tremble",
+"en": "aspen"
+},
+{
+"fr": "sirop",
+"en": "syrup"
+},
+{
+"fr": "nain",
+"en": "gnome"
+},
+{
+"fr": "quotidien",
+"en": "daily"
+},
+{
+"fr": "nouilles",
+"en": "noodle"
+},
+{
+"fr": "hypocrite",
+"en": "hypocrite"
+},
+{
+"fr": "milo",
+"en": "milo"
+},
+{
+"fr": "cuisinier",
+"en": "cookbook"
+},
+{
+"fr": "banlieue",
+"en": "suburb"
+},
+{
+"fr": "cuillère",
+"en": "spoon"
+},
+{
+"fr": "imposteur",
+"en": "imposter"
+},
+{
+"fr": "visiteur",
+"en": "caller"
+},
+{
+"fr": "reportage",
+"en": "reporting"
+},
+{
+"fr": "province",
+"en": "state"
+},
+{
+"fr": "mythe",
+"en": "myth"
+},
+{
+"fr": "yacht",
+"en": "yacht"
+},
+{
+"fr": "optimiste",
+"en": "optimist"
+},
+{
+"fr": "pelouse",
+"en": "lawn"
+},
+{
+"fr": "tequila",
+"en": "tequila"
+},
+{
+"fr": "combattant",
+"en": "fighter"
+},
+{
+"fr": "mouton",
+"en": "sheep"
+},
+{
+"fr": "idole",
+"en": "idol"
+},
+{
+"fr": "doyen",
+"en": "dean"
+},
+{
+"fr": "pâte",
+"en": "pastry"
+},
+{
+"fr": "bouquet",
+"en": "bouquet"
+},
+{
+"fr": "bijou",
+"en": "jewel"
+},
+{
+"fr": "bonnet",
+"en": "beret"
+},
+{
+"fr": "cognac",
+"en": "brandy"
+},
+{
+"fr": "médium",
+"en": "medium"
+},
+{
+"fr": "bunker",
+"en": "bunker"
+},
+{
+"fr": "blues",
+"en": "blues"
+},
+{
+"fr": "efface",
+"en": "eraser"
+},
+{
+"fr": "adrénaline",
+"en": "epinephrine"
+},
+{
+"fr": "vortex",
+"en": "whirlpool"
+},
+{
+"fr": "hôtesse",
+"en": "stewardess"
+},
+{
+"fr": "triomphe",
+"en": "victory"
+},
+{
+"fr": "concurrence",
+"en": "rival"
+},
+{
+"fr": "informateur",
+"en": "informant"
+},
+{
+"fr": "aimant",
+"en": "magnet"
+},
+{
+"fr": "indiquer",
+"en": "display"
+},
+{
+"fr": "forteresse",
+"en": "fortress"
+},
+{
+"fr": "défunt",
+"en": "dead"
+},
+{
+"fr": "potion",
+"en": "potion"
+},
+{
+"fr": "cuisses",
+"en": "thigh"
+},
+{
+"fr": "toxique",
+"en": "poison"
+},
+{
+"fr": "couvent",
+"en": "convent"
+},
+{
+"fr": "documentaire",
+"en": "documentary"
+},
+{
+"fr": "conserver",
+"en": "preserves"
+},
+{
+"fr": "canyon",
+"en": "canyon"
+},
+{
+"fr": "mule",
+"en": "mule"
+},
+{
+"fr": "fourmis",
+"en": "emmet"
+},
+{
+"fr": "terrasse",
+"en": "patio"
+},
+{
+"fr": "préfet",
+"en": "prefect"
+},
+{
+"fr": "connasse",
+"en": "jerk-off"
+},
+{
+"fr": "gangster",
+"en": "gangster"
+},
+{
+"fr": "cuisinière",
+"en": "stove"
+},
+{
+"fr": "chaton",
+"en": "kitten"
+},
+{
+"fr": "intermédiaire",
+"en": "mediator"
+},
+{
+"fr": "embauche",
+"en": "recruit"
+},
+{
+"fr": "chalet",
+"en": "chalet"
+},
+{
+"fr": "martini",
+"en": "martini"
+},
+{
+"fr": "indépendant",
+"en": "freelance"
+},
+{
+"fr": "écharpe",
+"en": "scarf"
+},
+{
+"fr": "brune",
+"en": "brunette"
+},
+{
+"fr": "librairie",
+"en": "bookshop"
+},
+{
+"fr": "bulletin",
+"en": "ballot"
+},
+{
+"fr": "mentor",
+"en": "mentor"
+},
+{
+"fr": "évier",
+"en": "cesspool"
+},
+{
+"fr": "communiqué",
+"en": "release"
+},
+{
+"fr": "raisin",
+"en": "grape"
+},
+{
+"fr": "citer",
+"en": "quote"
+},
+{
+"fr": "lard",
+"en": "bacon"
+},
+{
+"fr": "sniper",
+"en": "sniper"
+},
+{
+"fr": "marée",
+"en": "tide"
+},
+{
+"fr": "mack",
+"en": "mack"
+},
+{
+"fr": "moelle",
+"en": "marrow"
+},
+{
+"fr": "allié",
+"en": "ally"
+},
+{
+"fr": "écureuil",
+"en": "squirrel"
+},
+{
+"fr": "bataillon",
+"en": "battalion"
+},
+{
+"fr": "explosif",
+"en": "explosive"
+},
+{
+"fr": "blog",
+"en": "blog"
+},
+{
+"fr": "sérum",
+"en": "serum"
+},
+{
+"fr": "bulle",
+"en": "bubble"
+},
+{
+"fr": "poumon",
+"en": "lung"
+},
+{
+"fr": "télécommande",
+"en": "remote"
+},
+{
+"fr": "saumon",
+"en": "salmon"
+},
+{
+"fr": "affirmatif",
+"en": "affirmative"
+},
+{
+"fr": "jeep",
+"en": "jeep"
+},
+{
+"fr": "artillerie",
+"en": "artillery"
+},
+{
+"fr": "salive",
+"en": "saliva"
+},
+{
+"fr": "plombier",
+"en": "plumber"
+},
+{
+"fr": "villageois",
+"en": "villager"
+},
+{
+"fr": "duchesse",
+"en": "duchess"
+},
+{
+"fr": "cargo",
+"en": "shipment"
+},
+{
+"fr": "graine",
+"en": "come"
+},
+{
+"fr": "maniaque",
+"en": "lunatic"
+},
+{
+"fr": "manifeste",
+"en": "manifesto"
+},
+{
+"fr": "métaphore",
+"en": "metaphor"
+},
+{
+"fr": "jardinier",
+"en": "gardener"
+},
+{
+"fr": "pavillon",
+"en": "flag"
+},
+{
+"fr": "cafétéria",
+"en": "cafeteria"
+},
+{
+"fr": "raccourci",
+"en": "shortcut"
+},
+{
+"fr": "poisse",
+"en": "misfortune"
+},
+{
+"fr": "révolutionnaire",
+"en": "revolutionary"
+},
+{
+"fr": "hospitalité",
+"en": "hospitality"
+},
+{
+"fr": "faucon",
+"en": "hawk"
+},
+{
+"fr": "utérus",
+"en": "uterus"
+},
+{
+"fr": "rails",
+"en": "rails"
+},
+{
+"fr": "voleuse",
+"en": "thief"
+},
+{
+"fr": "cerf",
+"en": "deer"
+},
+{
+"fr": "astronaute",
+"en": "astronaut"
+},
+{
+"fr": "parasite",
+"en": "parasite"
+},
+{
+"fr": "musical",
+"en": "musical"
+},
+{
+"fr": "limonade",
+"en": "lemonade"
+},
+{
+"fr": "thèse",
+"en": "dissertation"
+},
+{
+"fr": "labyrinthe",
+"en": "maze"
+},
+{
+"fr": "consentement",
+"en": "consent"
+},
+{
+"fr": "permanent",
+"en": "permanent"
+},
+{
+"fr": "lucifer",
+"en": "match"
+},
+{
+"fr": "phare",
+"en": "lighthouse"
+},
+{
+"fr": "poney",
+"en": "pony"
+},
+{
+"fr": "négro",
+"en": "nigger"
+},
+{
+"fr": "parachute",
+"en": "parachute"
+},
+{
+"fr": "psychologue",
+"en": "psychologist"
+},
+{
+"fr": "gorille",
+"en": "gorilla"
+},
+{
+"fr": "bourreau",
+"en": "executioner"
+},
+{
+"fr": "neutre",
+"en": "neutral"
+},
+{
+"fr": "cadet",
+"en": "cadet"
+},
+{
+"fr": "détonateur",
+"en": "detonator"
+},
+{
+"fr": "veau",
+"en": "calf"
+},
+{
+"fr": "adolescent",
+"en": "adolescent"
+},
+{
+"fr": "capote",
+"en": "condom"
+},
+{
+"fr": "consultant",
+"en": "advisor"
+},
+{
+"fr": "ketchup",
+"en": "ketchup"
+},
+{
+"fr": "vétérinaire",
+"en": "veterinarian"
+},
+{
+"fr": "coéquipier",
+"en": "teammate"
+},
+{
+"fr": "batteur",
+"en": "drummer"
+},
+{
+"fr": "universitaire",
+"en": "academic"
+},
+{
+"fr": "blond",
+"en": "blonde"
+},
+{
+"fr": "masculin",
+"en": "masculine"
+},
+{
+"fr": "spectaculaire",
+"en": "spectacular"
+},
+{
+"fr": "schéma",
+"en": "diagram"
+},
+{
+"fr": "mouchard",
+"en": "informer"
+},
+{
+"fr": "entrepreneur",
+"en": "entrepreneur"
+},
+{
+"fr": "athlète",
+"en": "athlete"
+},
+{
+"fr": "stagiaire",
+"en": "trainee"
+},
+{
+"fr": "immortel",
+"en": "deity"
+},
+{
+"fr": "cafard",
+"en": "cockroach"
+},
+{
+"fr": "plasma",
+"en": "plasma"
+},
+{
+"fr": "récit",
+"en": "account"
+},
+{
+"fr": "vitrine",
+"en": "cabinet"
+},
+{
+"fr": "tomate",
+"en": "tomato"
+},
+{
+"fr": "paranoïaque",
+"en": "paranoid"
+},
+{
+"fr": "nécessité",
+"en": "essential"
+},
+{
+"fr": "millionnaire",
+"en": "millionaire"
+},
+{
+"fr": "patate",
+"en": "murphy"
+},
+{
+"fr": "dortoir",
+"en": "bedroom"
+},
+{
+"fr": "volcan",
+"en": "volcano"
+},
+{
+"fr": "employeur",
+"en": "employer"
+},
+{
+"fr": "abdomen",
+"en": "abdomen"
+},
+{
+"fr": "locales",
+"en": "venue"
+},
+{
+"fr": "néant",
+"en": "jazz"
+},
+{
+"fr": "lézard",
+"en": "lizard"
+},
+{
+"fr": "enquêteur",
+"en": "detective"
+},
+{
+"fr": "town",
+"en": "townspeople"
+},
+{
+"fr": "camper",
+"en": "camp"
+},
+{
+"fr": "fossé",
+"en": "ditch"
+},
+{
+"fr": "paumé",
+"en": "hooligan"
+},
+{
+"fr": "terminal",
+"en": "terminal"
+},
+{
+"fr": "paysan",
+"en": "peasant"
+},
+{
+"fr": "omelette",
+"en": "omelet"
+},
+{
+"fr": "support",
+"en": "pedestal"
+},
+{
+"fr": "toutou",
+"en": "pooch"
+},
+{
+"fr": "poignard",
+"en": "dagger"
+},
+{
+"fr": "compagne",
+"en": "chaperone"
+},
+{
+"fr": "étagère",
+"en": "shelf"
+},
+{
+"fr": "smoking",
+"en": "tuxedo"
+},
+{
+"fr": "tuteur",
+"en": "guardian"
+},
+{
+"fr": "annuaire",
+"en": "directory"
+},
+{
+"fr": "tribord",
+"en": "starboard"
+},
+{
+"fr": "majordome",
+"en": "butler"
+},
+{
+"fr": "inculpé",
+"en": "defendant"
+},
+{
+"fr": "étroit",
+"en": "narrow"
+},
+{
+"fr": "pinces",
+"en": "pliers"
+},
+{
+"fr": "seuil",
+"en": "doorstep"
+},
+{
+"fr": "frein",
+"en": "brake"
+},
+{
+"fr": "coureur",
+"en": "womanizer"
+},
+{
+"fr": "adolescente",
+"en": "teenager"
+},
+{
+"fr": "descendant",
+"en": "descendant"
+},
+{
+"fr": "manuscrit",
+"en": "manuscript"
+},
+{
+"fr": "tombeau",
+"en": "tomb"
+},
+{
+"fr": "infidèle",
+"en": "heathen"
+},
+{
+"fr": "filtre",
+"en": "filter"
+},
+{
+"fr": "cynique",
+"en": "cynic"
+},
+{
+"fr": "clope",
+"en": "faggot"
+},
+{
+"fr": "écurie",
+"en": "outhouse"
+},
+{
+"fr": "ancre",
+"en": "anchor"
+},
+{
+"fr": "marbre",
+"en": "plate"
+},
+{
+"fr": "technicien",
+"en": "technician"
+},
+{
+"fr": "beck",
+"en": "beck"
+},
+{
+"fr": "caillou",
+"en": "pebble"
+},
+{
+"fr": "aquarium",
+"en": "aquarium"
+},
+{
+"fr": "collectif",
+"en": "collective"
+},
+{
+"fr": "fourré",
+"en": "brush"
+},
+{
+"fr": "expo",
+"en": "expo"
+},
+{
+"fr": "étang",
+"en": "pond"
+},
+{
+"fr": "peloton",
+"en": "platoon"
+},
+{
+"fr": "entourage",
+"en": "entourage"
+},
+{
+"fr": "coquin",
+"en": "rogue"
+},
+{
+"fr": "boulet",
+"en": "cannonball"
+},
+{
+"fr": "canot",
+"en": "boat"
+},
+{
+"fr": "hacker",
+"en": "hack"
+},
+{
+"fr": "boulevard",
+"en": "boulevard"
+},
+{
+"fr": "sédatif",
+"en": "sedative"
+},
+{
+"fr": "lèvre",
+"en": "brim"
+},
+{
+"fr": "policière",
+"en": "policeman"
+},
+{
+"fr": "tyran",
+"en": "tyrant"
+},
+{
+"fr": "coursier",
+"en": "messenger"
+},
+{
+"fr": "chronique",
+"en": "chronicle"
+},
+{
+"fr": "slogan",
+"en": "motto"
+},
+{
+"fr": "gouvernante",
+"en": "governess"
+},
+{
+"fr": "pétard",
+"en": "firecracker"
+},
+{
+"fr": "colt",
+"en": "colt"
+},
+{
+"fr": "vagabond",
+"en": "vagabond"
+},
+{
+"fr": "annuel",
+"en": "yearly"
+},
+{
+"fr": "comète",
+"en": "comet"
+},
+{
+"fr": "générique",
+"en": "credits"
+},
+{
+"fr": "monastère",
+"en": "monastery"
+},
+{
+"fr": "yaourt",
+"en": "yogurt"
+},
+{
+"fr": "soja",
+"en": "bean"
+},
+{
+"fr": "perroquet",
+"en": "parrot"
+},
+{
+"fr": "traiteur",
+"en": "caterer"
+},
+{
+"fr": "tampon",
+"en": "tampon"
+},
+{
+"fr": "taverne",
+"en": "tavern"
+},
+{
+"fr": "porche",
+"en": "porch"
+},
+{
+"fr": "catalogue",
+"en": "catalog"
+},
+{
+"fr": "cobra",
+"en": "cobra"
+},
+{
+"fr": "milice",
+"en": "reserves"
+},
+{
+"fr": "touriste",
+"en": "tourist"
+},
+{
+"fr": "capot",
+"en": "cowl"
+},
+{
+"fr": "consulat",
+"en": "consulate"
+},
+{
+"fr": "tracteur",
+"en": "tractor"
+},
+{
+"fr": "scellé",
+"en": "seal"
+},
+{
+"fr": "peignoir",
+"en": "bathrobe"
+},
+{
+"fr": "scalpel",
+"en": "scalpel"
+},
+{
+"fr": "doctorat",
+"en": "doctorate"
+},
+{
+"fr": "gamma",
+"en": "gamma"
+},
+{
+"fr": "fonctionnement",
+"en": "malfunction"
+},
+{
+"fr": "croûte",
+"en": "crust"
+},
+{
+"fr": "escadron",
+"en": "squad"
+},
+{
+"fr": "stérile",
+"en": "wasteland"
+},
+{
+"fr": "gendre",
+"en": "son-in-law"
+},
+{
+"fr": "lulu",
+"en": "knockout"
+},
+{
+"fr": "crapaud",
+"en": "toad"
+},
+{
+"fr": "curry",
+"en": "curry"
+},
+{
+"fr": "bouillie",
+"en": "gruel"
+},
+{
+"fr": "habit",
+"en": "tails"
+},
+{
+"fr": "firme",
+"en": "firm"
+},
+{
+"fr": "hosto",
+"en": "infirmary"
+},
+{
+"fr": "tata",
+"en": "auntie"
+},
+{
+"fr": "mémé",
+"en": "grandma"
+},
+{
+"fr": "caviar",
+"en": "caviar"
+},
+{
+"fr": "broche",
+"en": "brooch"
+},
+{
+"fr": "partenariat",
+"en": "partnership"
+},
+{
+"fr": "flint",
+"en": "flint"
+},
+{
+"fr": "vaudou",
+"en": "voodoo"
+},
+{
+"fr": "claquer",
+"en": "cracking"
+},
+{
+"fr": "cascade",
+"en": "waterfall"
+},
+{
+"fr": "logo",
+"en": "logo"
+},
+{
+"fr": "psychotique",
+"en": "psychotic"
+},
+{
+"fr": "inférieur",
+"en": "subordinate"
+},
+{
+"fr": "vernis",
+"en": "varnish"
+},
+{
+"fr": "grotesque",
+"en": "grotesque"
+},
+{
+"fr": "baba",
+"en": "baba"
+},
+{
+"fr": "forge",
+"en": "smithy"
+},
+{
+"fr": "portier",
+"en": "doorman"
+},
+{
+"fr": "propagande",
+"en": "propaganda"
+},
+{
+"fr": "émissaire",
+"en": "emissary"
+},
+{
+"fr": "étalon",
+"en": "stallion"
+},
+{
+"fr": "légion",
+"en": "horde"
+},
+{
+"fr": "colleen",
+"en": "colleen"
+},
+{
+"fr": "frere",
+"en": "friar"
+},
+{
+"fr": "maestro",
+"en": "maestro"
+},
+{
+"fr": "façade",
+"en": "facade"
+},
+{
+"fr": "monument",
+"en": "monument"
+},
+{
+"fr": "héroïque",
+"en": "heroic"
+},
+{
+"fr": "clause",
+"en": "clause"
+},
+{
+"fr": "valentine",
+"en": "valentine"
+},
+{
+"fr": "sultan",
+"en": "sultan"
+},
+{
+"fr": "collants",
+"en": "pantyhose"
+},
+{
+"fr": "lingerie",
+"en": "lingerie"
+},
+{
+"fr": "concession",
+"en": "concession"
+},
+{
+"fr": "temporel",
+"en": "temporal"
+},
+{
+"fr": "rival",
+"en": "challenger"
+},
+{
+"fr": "disco",
+"en": "cabaret"
+},
+{
+"fr": "trompette",
+"en": "trumpet"
+},
+{
+"fr": "milliardaire",
+"en": "billionaire"
+},
+{
+"fr": "dinosaure",
+"en": "dinosaur"
+},
+{
+"fr": "paroisse",
+"en": "parish"
+},
+{
+"fr": "campement",
+"en": "campsite"
+},
+{
+"fr": "servant",
+"en": "servant"
+},
+{
+"fr": "alléluia",
+"en": "hallelujah"
+},
+{
+"fr": "observateur",
+"en": "observer"
+},
+{
+"fr": "hymne",
+"en": "hymn"
+},
+{
+"fr": "melon",
+"en": "derby"
+},
+{
+"fr": "hippie",
+"en": "hippie"
+},
+{
+"fr": "chameau",
+"en": "camel"
+},
+{
+"fr": "abîme",
+"en": "abyss"
+},
+{
+"fr": "doublure",
+"en": "stand-in"
+},
+{
+"fr": "accélérateur",
+"en": "throttle"
+},
+{
+"fr": "disciple",
+"en": "disciple"
+},
+{
+"fr": "honneurs",
+"en": "honours"
+},
+{
+"fr": "vêtement",
+"en": "clothes"
+},
+{
+"fr": "muffin",
+"en": "muffin"
+},
+{
+"fr": "playboy",
+"en": "playboy"
+},
+{
+"fr": "cambrioleur",
+"en": "burglar"
+},
+{
+"fr": "égout",
+"en": "sewer"
+},
+{
+"fr": "surfer",
+"en": "surf"
+},
+{
+"fr": "radin",
+"en": "cheapskate"
+},
+{
+"fr": "fiasco",
+"en": "bust"
+},
+{
+"fr": "mascotte",
+"en": "mascot"
+},
+{
+"fr": "kappa",
+"en": "kappa"
+},
+{
+"fr": "spaghettis",
+"en": "spaghetti"
+},
+{
+"fr": "pépé",
+"en": "daddy"
+},
+{
+"fr": "pianiste",
+"en": "pianist"
+},
+{
+"fr": "marsh",
+"en": "marsh"
+},
+{
+"fr": "boussole",
+"en": "compass"
+},
+{
+"fr": "beignet",
+"en": "donut"
+},
+{
+"fr": "sadique",
+"en": "sadist"
+},
+{
+"fr": "vinaigre",
+"en": "vinegar"
+},
+{
+"fr": "pseudo",
+"en": "pseudonym"
+},
+{
+"fr": "bagage",
+"en": "luggage"
+},
+{
+"fr": "cosmos",
+"en": "universe"
+},
+{
+"fr": "végétarien",
+"en": "vegetarian"
+},
+{
+"fr": "patriote",
+"en": "patriot"
+},
+{
+"fr": "poire",
+"en": "pear"
+},
+{
+"fr": "souverain",
+"en": "sovereign"
+},
+{
+"fr": "excentrique",
+"en": "crackpot"
+},
+{
+"fr": "clochard",
+"en": "tramp"
+},
+{
+"fr": "notaire",
+"en": "notary"
+},
+{
+"fr": "congélateur",
+"en": "freezer"
+},
+{
+"fr": "bandeau",
+"en": "headband"
+},
+{
+"fr": "bêta",
+"en": "beta"
+},
+{
+"fr": "organique",
+"en": "organic"
+},
+{
+"fr": "pédophile",
+"en": "pedophile"
+},
+{
+"fr": "nounours",
+"en": "teddy"
+},
+{
+"fr": "boulangerie",
+"en": "bakery"
+},
+{
+"fr": "prairie",
+"en": "meadow"
+},
+{
+"fr": "ongle",
+"en": "nail"
+},
+{
+"fr": "colombe",
+"en": "pigeon"
+},
+{
+"fr": "brunch",
+"en": "brunch"
+},
+{
+"fr": "tronc",
+"en": "torso"
+},
+{
+"fr": "consul",
+"en": "consul"
+},
+{
+"fr": "rétablissement",
+"en": "recovery"
+},
+{
+"fr": "caféine",
+"en": "caffeine"
+},
+{
+"fr": "opium",
+"en": "opium"
+},
+{
+"fr": "diplomate",
+"en": "diplomat"
+},
+{
+"fr": "serge",
+"en": "serge"
+},
+{
+"fr": "pétition",
+"en": "request"
+},
+{
+"fr": "tricheur",
+"en": "cheater"
+},
+{
+"fr": "radical",
+"en": "stem"
+},
+{
+"fr": "canaille",
+"en": "knave"
+},
+{
+"fr": "défenseur",
+"en": "garter"
+},
+{
+"fr": "dicton",
+"en": "saying"
+},
+{
+"fr": "bourre",
+"en": "padding"
+},
+{
+"fr": "tranchée",
+"en": "trench"
+},
+{
+"fr": "cathédrale",
+"en": "cathedral"
+},
+{
+"fr": "dentifrice",
+"en": "toothpaste"
+},
+{
+"fr": "martyr",
+"en": "martyr"
+},
+{
+"fr": "sushi",
+"en": "sushi"
+},
+{
+"fr": "réceptionniste",
+"en": "receptionist"
+},
+{
+"fr": "infanterie",
+"en": "infantry"
+},
+{
+"fr": "concurrent",
+"en": "competitor"
+},
+{
+"fr": "tablier",
+"en": "apron"
+},
+{
+"fr": "conservateur",
+"en": "curator"
+},
+{
+"fr": "tournevis",
+"en": "screwdriver"
+},
+{
+"fr": "éclipse",
+"en": "eclipse"
+},
+{
+"fr": "donjon",
+"en": "dungeon"
+},
+{
+"fr": "annexe",
+"en": "annex"
+},
+{
+"fr": "sauna",
+"en": "sauna"
+},
+{
+"fr": "éventreur",
+"en": "ripper"
+},
+{
+"fr": "coyote",
+"en": "coyote"
+},
+{
+"fr": "philosophe",
+"en": "philosopher"
+},
+{
+"fr": "mustang",
+"en": "mustang"
+},
+{
+"fr": "boucherie",
+"en": "slaughterhouse"
+},
+{
+"fr": "kidnappeur",
+"en": "kidnapper"
+},
+{
+"fr": "chemisier",
+"en": "blouse"
+},
+{
+"fr": "impératrice",
+"en": "empress"
+},
+{
+"fr": "licorne",
+"en": "unicorn"
+},
+{
+"fr": "bactéries",
+"en": "bacteria"
+},
+{
+"fr": "couille",
+"en": "ball"
+},
+{
+"fr": "délinquant",
+"en": "delinquent"
+},
+{
+"fr": "stein",
+"en": "stein"
+},
+{
+"fr": "bûcher",
+"en": "pyre"
+},
+{
+"fr": "dynastie",
+"en": "dynasty"
+},
+{
+"fr": "chercheur",
+"en": "researcher"
+},
+{
+"fr": "gentilhomme",
+"en": "gentleman"
+},
+{
+"fr": "convertir",
+"en": "convert"
+},
+{
+"fr": "moustiques",
+"en": "mosquito"
+},
+{
+"fr": "saga",
+"en": "saga"
+},
+{
+"fr": "nombril",
+"en": "navel"
+},
+{
+"fr": "compositeur",
+"en": "composer"
+},
+{
+"fr": "surnaturel",
+"en": "supernatural"
+},
+{
+"fr": "légume",
+"en": "vegetable"
+},
+{
+"fr": "dictionnaire",
+"en": "dictionary"
+},
+{
+"fr": "hydrogène",
+"en": "hydrogen"
+},
+{
+"fr": "hippies",
+"en": "hippy"
+},
+{
+"fr": "brevet",
+"en": "diploma"
+},
+{
+"fr": "cygne",
+"en": "swan"
+},
+{
+"fr": "skate",
+"en": "skateboard"
+},
+{
+"fr": "tirage",
+"en": "drawing"
+},
+{
+"fr": "algues",
+"en": "algae"
+},
+{
+"fr": "implant",
+"en": "implant"
+},
+{
+"fr": "fasciste",
+"en": "fascist"
+},
+{
+"fr": "refrain",
+"en": "refrain"
+},
+{
+"fr": "trame",
+"en": "woof"
+},
+{
+"fr": "chiffon",
+"en": "textile"
+},
+{
+"fr": "baronne",
+"en": "baroness"
+},
+{
+"fr": "instructeur",
+"en": "teacher"
+},
+{
+"fr": "uranium",
+"en": "uranium"
+},
+{
+"fr": "abbé",
+"en": "abbot"
+},
+{
+"fr": "ardoise",
+"en": "blackboard"
+},
+{
+"fr": "aluminium",
+"en": "aluminum"
+},
+{
+"fr": "vipère",
+"en": "viper"
+},
+{
+"fr": "insuline",
+"en": "insulin"
+},
+{
+"fr": "présage",
+"en": "omen"
+},
+{
+"fr": "mercer",
+"en": "mercer"
+},
+{
+"fr": "intellectuel",
+"en": "intellectual"
+},
+{
+"fr": "attardé",
+"en": "cretin"
+},
+{
+"fr": "radeau",
+"en": "raft"
+},
+{
+"fr": "paume",
+"en": "palm"
+},
+{
+"fr": "marraine",
+"en": "godmother"
+},
+{
+"fr": "pleurnicher",
+"en": "whimper"
+},
+{
+"fr": "approuver",
+"en": "sanction"
+},
+{
+"fr": "corporation",
+"en": "tummy"
+},
+{
+"fr": "nova",
+"en": "nova"
+},
+{
+"fr": "jumelle",
+"en": "binoculars"
+},
+{
+"fr": "inventeur",
+"en": "inventor"
+},
+{
+"fr": "huck",
+"en": "huck"
+},
+{
+"fr": "charlatan",
+"en": "phony"
+},
+{
+"fr": "cactus",
+"en": "cactus"
+},
+{
+"fr": "croissant",
+"en": "croissant"
+},
+{
+"fr": "symbolique",
+"en": "motion"
+},
+{
+"fr": "columbo",
+"en": "columbo"
+},
+{
+"fr": "swing",
+"en": "jive"
+},
+{
+"fr": "superficiel",
+"en": "shallow"
+},
+{
+"fr": "délégué",
+"en": "delegate"
+},
+{
+"fr": "freeman",
+"en": "freeman"
+},
+{
+"fr": "thermique",
+"en": "thermal"
+},
+{
+"fr": "mercenaire",
+"en": "mercenary"
+},
+{
+"fr": "élastique",
+"en": "elastic"
+},
+{
+"fr": "microscope",
+"en": "microscope"
+},
+{
+"fr": "meuble",
+"en": "furniture"
+},
+{
+"fr": "alligator",
+"en": "gator"
+},
+{
+"fr": "psychique",
+"en": "psychic"
+},
+{
+"fr": "mûre",
+"en": "blackberry"
+},
+{
+"fr": "cholestérol",
+"en": "cholesterol"
+},
+{
+"fr": "félicitation",
+"en": "congratulation"
+},
+{
+"fr": "météorite",
+"en": "meteorite"
+},
+{
+"fr": "lanterne",
+"en": "lantern"
+},
+{
+"fr": "plouc",
+"en": "rube"
+},
+{
+"fr": "ingrédient",
+"en": "ingredient"
+},
+{
+"fr": "clique",
+"en": "clique"
+},
+{
+"fr": "démo",
+"en": "demo"
+},
+{
+"fr": "bandage",
+"en": "bandage"
+},
+{
+"fr": "tatie",
+"en": "aunty"
+},
+{
+"fr": "nouveauté",
+"en": "trinket"
+},
+{
+"fr": "psycho",
+"en": "psycho"
+},
+{
+"fr": "tranchant",
+"en": "sharp"
+},
+{
+"fr": "destructeur",
+"en": "destroyer"
+},
+{
+"fr": "amulette",
+"en": "amulet"
+},
+{
+"fr": "tribune",
+"en": "podium"
+},
+{
+"fr": "sponsor",
+"en": "sponsor"
+},
+{
+"fr": "platine",
+"en": "disc"
+},
+{
+"fr": "bibliothécaire",
+"en": "librarian"
+},
+{
+"fr": "dupe",
+"en": "chump"
+},
+{
+"fr": "forgeron",
+"en": "blacksmith"
+},
+{
+"fr": "bowman",
+"en": "bowman"
+},
+{
+"fr": "contremaître",
+"en": "overseer"
+},
+{
+"fr": "décret",
+"en": "decree"
+},
+{
+"fr": "bile",
+"en": "bile"
+},
+{
+"fr": "adhésif",
+"en": "adhesive"
+},
+{
+"fr": "sodium",
+"en": "sodium"
+},
+{
+"fr": "protester",
+"en": "protest"
+},
+{
+"fr": "violoncelle",
+"en": "cello"
+},
+{
+"fr": "initiale",
+"en": "initial"
+},
+{
+"fr": "underwood",
+"en": "underwood"
+},
+{
+"fr": "épique",
+"en": "epic"
+},
+{
+"fr": "radiateur",
+"en": "heater"
+},
+{
+"fr": "gourou",
+"en": "guru"
+},
+{
+"fr": "séisme",
+"en": "earthquake"
+},
+{
+"fr": "auxiliaire",
+"en": "auxiliary"
+},
+{
+"fr": "ravin",
+"en": "ravine"
+},
+{
+"fr": "huissier",
+"en": "bailiff"
+},
+{
+"fr": "mendiant",
+"en": "begging"
+},
+{
+"fr": "euphémisme",
+"en": "euphemism"
+},
+{
+"fr": "liqueur",
+"en": "liqueur"
+},
+{
+"fr": "fainéant",
+"en": "good-for-nothing"
+},
+{
+"fr": "mayonnaise",
+"en": "mayonnaise"
+},
+{
+"fr": "dingo",
+"en": "dingo"
+},
+{
+"fr": "investisseur",
+"en": "investor"
+},
+{
+"fr": "glacier",
+"en": "glacier"
+},
+{
+"fr": "engrais",
+"en": "fertilizer"
+},
+{
+"fr": "potassium",
+"en": "potassium"
+},
+{
+"fr": "jument",
+"en": "mare"
+},
+{
+"fr": "androïde",
+"en": "android"
+},
+{
+"fr": "naufrage",
+"en": "shipwreck"
+},
+{
+"fr": "prospectus",
+"en": "circular"
+},
+{
+"fr": "caillot",
+"en": "clot"
+},
+{
+"fr": "pénitencier",
+"en": "penitentiary"
+},
+{
+"fr": "interface",
+"en": "interface"
+},
+{
+"fr": "brigadier",
+"en": "brigadier"
+},
+{
+"fr": "prestige",
+"en": "praise"
+},
+{
+"fr": "hamster",
+"en": "hamster"
+},
+{
+"fr": "lavabo",
+"en": "crapper"
+},
+{
+"fr": "gong",
+"en": "chime"
+},
+{
+"fr": "synthétique",
+"en": "synthetic"
+},
+{
+"fr": "diabétique",
+"en": "diabetic"
+},
+{
+"fr": "guitariste",
+"en": "guitarist"
+},
+{
+"fr": "jaguar",
+"en": "jaguar"
+},
+{
+"fr": "orge",
+"en": "barley"
+},
+{
+"fr": "plaignant",
+"en": "plaintiff"
+},
+{
+"fr": "tabouret",
+"en": "stool"
+},
+{
+"fr": "astéroïde",
+"en": "asteroid"
+},
+{
+"fr": "caille",
+"en": "quail"
+},
+{
+"fr": "milord",
+"en": "milord"
+},
+{
+"fr": "biographie",
+"en": "biography"
+},
+{
+"fr": "gigolo",
+"en": "gigolo"
+},
+{
+"fr": "cockpit",
+"en": "cockpit"
+},
+{
+"fr": "pacha",
+"en": "pasha"
+},
+{
+"fr": "cheeseburger",
+"en": "cheeseburger"
+},
+{
+"fr": "humanitaire",
+"en": "humanitarian"
+},
+{
+"fr": "ancêtre",
+"en": "ancestor"
+},
+{
+"fr": "margarita",
+"en": "margarita"
+},
+{
+"fr": "diva",
+"en": "diva"
+},
+{
+"fr": "chaudière",
+"en": "boiler"
+},
+{
+"fr": "conteneur",
+"en": "container"
+},
+{
+"fr": "sportive",
+"en": "sportsman"
+},
+{
+"fr": "kris",
+"en": "kris"
+},
+{
+"fr": "fiesta",
+"en": "fiesta"
+},
+{
+"fr": "bookmaker",
+"en": "bookie"
+},
+{
+"fr": "narcissique",
+"en": "narcissist"
+},
+{
+"fr": "azote",
+"en": "nitrogen"
+},
+{
+"fr": "progéniture",
+"en": "young"
+},
+{
+"fr": "veuf",
+"en": "widower"
+},
+{
+"fr": "intouchable",
+"en": "outcast"
+},
+{
+"fr": "magnum",
+"en": "magnum"
+},
+{
+"fr": "rossignol",
+"en": "nightingale"
+},
+{
+"fr": "déluge",
+"en": "flood"
+},
+{
+"fr": "pendentif",
+"en": "chandelier"
+},
+{
+"fr": "tronçonneuse",
+"en": "chainsaw"
+},
+{
+"fr": "jargon",
+"en": "gibberish"
+},
+{
+"fr": "chum",
+"en": "boyfriend"
+},
+{
+"fr": "tofu",
+"en": "tofu"
+},
+{
+"fr": "prostate",
+"en": "prostate"
+},
+{
+"fr": "salsa",
+"en": "salsa"
+},
+{
+"fr": "latte",
+"en": "latte"
+},
+{
+"fr": "mélancolique",
+"en": "melancholic"
+},
+{
+"fr": "chimiste",
+"en": "chemist"
+},
+{
+"fr": "ultimatum",
+"en": "ultimatum"
+},
+{
+"fr": "pécheur",
+"en": "sinner"
+},
+{
+"fr": "marqueur",
+"en": "marker"
+},
+{
+"fr": "toxine",
+"en": "toxin"
+},
+{
+"fr": "pizzeria",
+"en": "pizzeria"
+},
+{
+"fr": "incompétent",
+"en": "incompetent"
+},
+{
+"fr": "merle",
+"en": "merle"
+},
+{
+"fr": "archevêque",
+"en": "archbishop"
+},
+{
+"fr": "clodo",
+"en": "hobo"
+},
+{
+"fr": "glacière",
+"en": "cooler"
+},
+{
+"fr": "crypte",
+"en": "crypt"
+},
+{
+"fr": "vautour",
+"en": "vulture"
+},
+{
+"fr": "terminus",
+"en": "depot"
+},
+{
+"fr": "déchet",
+"en": "waste"
+},
+{
+"fr": "douillet",
+"en": "cosy"
+},
+{
+"fr": "sonar",
+"en": "sonar"
+},
+{
+"fr": "lassie",
+"en": "lass"
+},
+{
+"fr": "dépouille",
+"en": "cadaver"
+},
+{
+"fr": "capitalisme",
+"en": "capitalism"
+},
+{
+"fr": "pédiatre",
+"en": "pediatrician"
+},
+{
+"fr": "traîneau",
+"en": "sled"
+},
+{
+"fr": "bizut",
+"en": "freshman"
+},
+{
+"fr": "claquement",
+"en": "applause"
+},
+{
+"fr": "fanatique",
+"en": "fanatic"
+},
+{
+"fr": "charpentier",
+"en": "carpenter"
+},
+{
+"fr": "altercation",
+"en": "altercation"
+},
+{
+"fr": "mutant",
+"en": "mutant"
+},
+{
+"fr": "réparateur",
+"en": "repairman"
+},
+{
+"fr": "imperméable",
+"en": "raincoat"
+},
+{
+"fr": "tondeuse",
+"en": "mower"
+},
+{
+"fr": "basique",
+"en": "staple"
+},
+{
+"fr": "calcium",
+"en": "calcium"
+},
+{
+"fr": "dancing",
+"en": "ballroom"
+},
+{
+"fr": "rebondir",
+"en": "rebound"
+},
+{
+"fr": "gnôle",
+"en": "hooch"
+},
+{
+"fr": "riposte",
+"en": "comeback"
+},
+{
+"fr": "juvénile",
+"en": "juvenile"
+},
+{
+"fr": "apéritif",
+"en": "appetizer"
+},
+{
+"fr": "tanière",
+"en": "lair"
+},
+{
+"fr": "intitulé",
+"en": "heading"
+},
+{
+"fr": "promoteur",
+"en": "developer"
+},
+{
+"fr": "décapotable",
+"en": "convertible"
+},
+{
+"fr": "symphonie",
+"en": "symphony"
+},
+{
+"fr": "gémir",
+"en": "groan"
+},
+{
+"fr": "moisissure",
+"en": "modeling"
+},
+{
+"fr": "dictature",
+"en": "dictatorship"
+},
+{
+"fr": "vitamine",
+"en": "vitamin"
+},
+{
+"fr": "bâche",
+"en": "tarp"
+},
+{
+"fr": "plutonium",
+"en": "plutonium"
+},
+{
+"fr": "fiole",
+"en": "flask"
+},
+{
+"fr": "réécrire",
+"en": "rewrite"
+},
+{
+"fr": "soufre",
+"en": "sulfur"
+},
+{
+"fr": "catin",
+"en": "whore"
+},
+{
+"fr": "smiley",
+"en": "smiley"
+},
+{
+"fr": "bagel",
+"en": "bagel"
+},
+{
+"fr": "gémissement",
+"en": "moan"
+},
+{
+"fr": "hurlement",
+"en": "howl"
+},
+{
+"fr": "cocu",
+"en": "cuckold"
+},
+{
+"fr": "sands",
+"en": "sands"
+},
+{
+"fr": "gobelet",
+"en": "chalice"
+},
+{
+"fr": "bourgeoise",
+"en": "missus"
+},
+{
+"fr": "narrateur",
+"en": "narrator"
+},
+{
+"fr": "électricien",
+"en": "electrician"
+},
+{
+"fr": "clavicule",
+"en": "clavicle"
+},
+{
+"fr": "télépathie",
+"en": "telepathy"
+},
+{
+"fr": "bannière",
+"en": "banner"
+},
+{
+"fr": "anecdote",
+"en": "trivia"
+},
+{
+"fr": "boulette",
+"en": "meatball"
+},
+{
+"fr": "goliath",
+"en": "colossus"
+},
+{
+"fr": "infernal",
+"en": "infernal"
+},
+{
+"fr": "haricot",
+"en": "noggin"
+},
+{
+"fr": "shogun",
+"en": "shogun"
+},
+{
+"fr": "inciter",
+"en": "prod"
+},
+{
+"fr": "cidre",
+"en": "cider"
+},
+{
+"fr": "copilote",
+"en": "copilot"
+},
+{
+"fr": "lubrifiant",
+"en": "lubricant"
+},
+{
+"fr": "nerd",
+"en": "grind"
+},
+{
+"fr": "aorte",
+"en": "aorta"
+}
 ]
