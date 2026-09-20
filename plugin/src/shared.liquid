@@ -3,10 +3,25 @@
 
   L'OG mesure 800x480, le X 1040x780 : ce ne sont pas les mêmes proportions,
   donc le SVG n'est pas agrandi, il est recomposé. Les deux versions arrivent
-  pré-calculées dans le payload, le transform ne fait que les transmettre.
+  pré-calculées dans le payload.
+
+  Deux précautions :
+  - si le transform n'a pas tourné, les données peuvent arriver enveloppées
+    dans IDX_0 ; on récupère alors les champs là-dedans ;
+  - trmnl.device.height peut être vide (aperçu, contexte inhabituel) et une
+    comparaison avec nil fait échouer Liquid : d'où le default.
 {% endcomment %}
-{% if trmnl.device.height > 600 %}
-  {% assign dalle = x %}
+
+{% assign svg_og = og %}
+{% assign svg_x = x %}
+{% if svg_og == blank and IDX_0 %}
+  {% assign svg_og = IDX_0.og %}
+  {% assign svg_x = IDX_0.x %}
+{% endif %}
+
+{% assign hauteur = trmnl.device.height | default: 480 | plus: 0 %}
+{% if hauteur > 600 and svg_x != blank %}
+  {% assign dalle = svg_x %}
 {% else %}
-  {% assign dalle = og %}
+  {% assign dalle = svg_og %}
 {% endif %}
