@@ -20,10 +20,17 @@ on:
           - "tout"
           - "listes seulement"
           - "ecrans seulement"
-      filtre_wordnet:
-        description: "Filtrer les mots par WordNet (décocher si le français est trop pauvre)"
-        type: boolean
-        default: true
+      mode:
+        description: "Ne reconstruire qu'un mode (vide = tous)"
+        type: choice
+        default: ""
+        options:
+          - ""
+          - "oublie"
+          - "naissance"
+          - "resurrection"
+          - "millesime"
+          - "bilingue"
 
 permissions:
   contents: write
@@ -62,8 +69,6 @@ jobs:
       # chaque mode pourra produire.
       - name: Listes de candidats
         if: inputs.etape != 'ecrans seulement'
-        env:
-          SANS_WORDNET: ${{ inputs.filtre_wordnet == false && '1' || '' }}
         run: |
           python scripts/prepare.py --lang fr
           python scripts/prepare.py --lang en
@@ -77,8 +82,10 @@ jobs:
         if: inputs.etape != 'listes seulement'
         run: |
           set -uo pipefail
+          MODES="${{ inputs.mode }}"
+          [ -z "$MODES" ] && MODES="oublie naissance resurrection millesime bilingue"
           for langue in fr en; do
-            for mode in oublie naissance resurrection millesime bilingue; do
+            for mode in $MODES; do
               echo "--- $mode-$langue ---"
               python scripts/build.py --lang "$langue" --mode "$mode" || {
                 echo "::warning::échec sur $mode-$langue, on continue"
