@@ -32,6 +32,9 @@ def _json(url):
 
 def run(input):
     donnees = input if isinstance(input, dict) else {}
+    # en polling multi-URL, la réponse arrive enveloppée dans IDX_0
+    if "IDX_0" in donnees and isinstance(donnees["IDX_0"], dict):
+        donnees = donnees["IDX_0"]
     try:
         langue = donnees.get("langue", "en")
 
